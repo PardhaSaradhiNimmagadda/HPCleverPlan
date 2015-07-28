@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+	<h:head> 
+		<h:outputStylesheet name="../Resources/css/style.css"/>
+		<script type="text/javascript">
+    
+</script>
+	</h:head>      
+	<h:body > 
+	<style>
+	
+	.ui-datatable .ui-datatable-header{
+	background-color:#3399FF ;
+   font-size:100% !important;
+  
+	}
+	.ui-datatable thead th{
+	background-color:#3399FF ;
+   font-size:100% !important;
+  }
+  
+  
+	
+	
+	
+	</style>
+		<!-- Header Content Start 100px Height -->
+		<div class="header"> 
+			<div class="container"> <!-- width 940 px -->
+				<!-- Header / Welcome, Login Details, HP Logo -->
+				<div class="one_third_column">
+					<!-- Empty -->
+				</div>
+		hide		<div class="one_third_column">
+					<!-- Welcome, text-align: center -->
+				</div>
+				<div class="one_third_column login_and_logo"> <!-- display inline block & width: 100%-->
+					<!-- Login Details -->
+					<div class="login_info"> <!-- width: 80% -->
+						
+					</div>					
+					<div class="hp_logo"> <!-- width: 20% -->
+					
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- Header Content End -->
+
+<!-- 	<h:graphicImage src="../resources/images/<file-name>.jpg" styleClass=""></h:graphicImage>
+	
+	<input type="text" id="email" name="email" placeholder="Enter Email" />
+	
+	- is empty or not
+	- is it email or not
+	
+	Using 1Primefaces Themes
+ -->	
+		
+		<!-- Container Start -->
+		<div class="container">
+		
+		
+				<!-- Sidebar Area Start -->
+				<div class="left_sidebar one_third_column"> <!-- Padding-left & right 15px -->
+					CLEVER PLAN
+				</div>
+				<!-- Sidebar Area End -->
+				
+				
+				<!-- Main Content Start -->
+				<div class="main_column two_third_column">
+					<div class="one_third_column">
+						<!-- Login Details -->
+						
+<h:form id="form">
+    
+ <p:dataTable id="carts" var="cart" value="#{cartBean.carts}" rowKey="#{cart.id}"
+                 selection="#{cartBean.selectedCart}" selectionMode="single">
+        <f:facet name="header" >
+        Review Cart
+        </f:facet>
+        <p:column headerText="Product Family">
+            <h:outputText value="#{cart.product_family}" />
+        </p:column>
+        <p:column headerText="Quantity Added">
+            <h:outputText value="#{cart.quantity_added}" />
+        </p:column>
+        <p:column headerText="Cart Add Date and Time">
+            <h:outputText value="#{cart.cart_add_date_and_time}" />
+        </p:column>
+        <p:column headerText="Confirm Order to Supply Chain">
+            <h:outputText value="#{cart.confirm_order_to_supply_chain}" />
+            </p:column>
+        <p:column headerText="Cancel">
+            <h:outputText value="#{cart.cancel}" />
+        </p:column>
+        
+ </p:dataTable>
+ <p:dialog header="Selected Carts" widgetVar="multiCartDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="50">
+        <p:outputPanel id="multiCartsDetail" style="text-align:center;">
+            <ui:repeat value="#{cartBean.selectedCarts}" var="cart">
+                <h:outputText value="#{cart.product_family}" style="display:block"/>
+                <h:outputText value="#{cart.quantity_added}" style="display:block"/>
+                <h:outputText value="#{cart.cart_add_date_and_time}" style="display:block"/>
+                <h:outputText value="#{cart.confirm_order_to_supply_chain}" style="display:block"/>
+                <h:outputText value="#{cart.cancel}" style="display:block"/>
+            </ui:repeat>
+        </p:outputPanel>
+    </p:dialog>
+	    
+	    
+	    
+</h:form>
+
+      
+    
+    
+                    
+					
+					
+					</div>
+					<div class="one_third_column">
+						<!-- Map -->
+					</div>
+				</div>
+				<!-- Main Content End -->
+		
+		
+		</div>
+		<!-- Container End -->
+
+		<!-- Footer Area Start -->
+		<div class="footer">
+			Copyright
+		</div>		
+		<!-- Footer Area End -->
+	</h:body>
+</html>

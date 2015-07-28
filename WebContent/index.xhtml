@@ -1,0 +1,113 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="template.xhtml">
+
+    <ui:define name="head">
+        
+    </ui:define>
+    
+    <ui:define name="header_left">
+        
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="welcome_txt">Welcome</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, 04:45 PM</b> <br/> Saturday, 25th July, 2015</span> 
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        </div>
+	    </div>
+    </ui:define>
+    
+    
+    <ui:define name="left_sidebar">
+    	<div class="hpblue leftsidebar">
+	        <div class="clever_plan_text">CLEVER PLAN</div>
+			<div class="clear_plan_caption">HP Brazil Proactive Planning Platform</div>
+		</div>
+    </ui:define>
+    
+    <ui:define name="main_content">
+        <div class="row">
+			<div class="col-md-5 col-sm-7 main_content">
+			<br/><br/>
+			<h:graphicImage value="Resources/images/ic_laptop_windows_48px.svg" styleClass="svg laptop-icon pull-left"/>
+			<h:graphicImage value="Resources/images/ic_desktop_mac_48px.svg" styleClass="svg laptop-icon pull-right"/>
+			<br/><br/><br/><br/>
+				<!-- Login Details -->
+				<h:form>
+	               <p:inputText styleClass="inputbox" id="emailid" required="true"  label="emailid" requiredMessage="Please Enter HP Email."
+				        validatorMessage="Invalid email format" placeholder="Enter HP email" >
+			         <f:validateLength minimum="3" maximum="20" />
+			         <f:validateRegex
+					    pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+			 
+				    </p:inputText>
+				    	<p:message id="v1" for="emailid" />
+				         
+					<p:inputText styleClass="inputbox" id="password" required="true"  label="password" 
+				            requiredMessage="Please Enter Password." placeholder="Password">
+				     <f:validateLength minimum="3" maximum="20" />
+					</p:inputText>
+					
+					<p:message id="v2" for="password" />
+			         
+			         <span class="pull-right" style="font-size: 11px; color: #333;">Your password may be different from HP password	</span><br/><br/>
+					<p:commandButton styleClass="go_button" value="Go" ajax="true" validateClient="true" update="v1 v2" />
+				
+					
+
+			          <br/><br/>
+			    	 <p:commandLink style="font-size: 12px;" value="Forget Password" type="button" onclick="PF('dlg1').show();" />
+
+			    	 <p:commandLink style="font-size: 12px;" styleClass="pull-right" value="Change Password" type="button" onclick="PF('dlg2').show();" />
+				 
+					
+					
+					<p:dialog id="fpdlg" header="EmailID" widgetVar="dlg1"  modal="true"  height="100">
+						<p:inputText  id="email" required="true"  label="emailid" requiredMessage="Enter EmailId"
+					    		validatorMessage="Invalid email format"
+				         		placeholder="Enter emailId" >
+				             <f:validateLength minimum="3" maximum="20" />
+				             <f:validateRegex
+								pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+				 		 </p:inputText>
+				        <p:commandButton value="Go" ajax="true" 
+				            update= "emsg" oncomplete="if(!args.validationFailed)dlg1.hide();" />
+				     	<p:message id="emsg" for="email"></p:message>
+					</p:dialog>
+				 
+					<p:dialog header="Password" widgetVar="dlg2" modal="true" height="200" id="matchGrid">
+					
+				        <p:password id="pwd1" feedback="false" match="pwd2" label="Password 1" required="true" 
+				                     requiredMessage="Enter Password"   placeholder="Enter New Password"/>
+				        <p:message id="ppmsg1" for="pwd1"/>
+				        <p:password id="pwd2" feedback="false" label="Password 2" required="true"
+				             requiredMessage="Password is not matching"   placeholder="Confirm New Password" />
+				        <p:message id="ppmsg2" for="pwd2"/>                
+					                        
+					 	<p:commandButton value="Go" ajax="true" update= "ppmsg1 ppmsg2" 
+					 			oncomplete="if(!args.validationFailed)dlg1.hide();" />           
+					</p:dialog>   
+			    
+	        	</h:form>
+	        	<!--  Login End -->
+			</div>
+			<div class="col-md-7 col-sm-5 right_content">
+				<h:graphicImage value="Resources/images/brazil_map.png" />
+			</div>
+		</div>
+    </ui:define>
+    
+    <ui:define name="footer">
+          </ui:define>
+</ui:composition>

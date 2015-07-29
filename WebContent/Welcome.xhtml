@@ -20,7 +20,9 @@
     <ui:define name="header_right">
         <div class="row" style="padding-top: 15px;">
 	        <div class="col-md-9 col-sm-9 col-xs-9">
-	        	<span class="braziltime">  <b>Brazil Time, 04:45 PM</b> <br/> Saturday, 25th July, 2015</span> 
+	        	<span class="braziltime3">  <b>28-jul-2015 04:45 PM Brazil Time </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="margin-right: -12%; float:right; font-size: 9px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on 22-jul-2015</b></span>
 	        </div>
 	        <div class="col-md-3 col-sm-3 col-xs-3">
 	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
@@ -36,10 +38,32 @@
 		</div>
     </ui:define>
      <ui:define name="main_content">
-        <div class="row">
-			<div class="col-md-5 col-sm-7 main_content">
-		    </div>
+        <div class="row"> 
+        	<div class="col-md-1"></div>
+		    <div class="col-md-10 border">CHOOSE YOUR WORK AREA</div>
+		    <div class="col-md-1"></div>
 		</div>
+	    <div class="row">
+	        <div class="col-md-1"></div>
+	    	<div class="col-md-3 pull-left">
+	    		<p:commandButton styleClass="welcomeButton go_button"  value="PRODUCT AVAILBILITY AND ALTERNATIVES"/>
+	    		<div class="text">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
+	    	</div>  
+	       	<div class="col-md-4 text-center">
+	      		<p:commandButton styleClass="welcomeButton go_button"  value="INVENTORY OPTIMIZAION"/>
+	      		<div class="text" style="margin-left: 57px;">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
+	      	</div>
+	      	<div class="col-md-3 pull-right">
+	      		<p:commandButton styleClass="welcomeButton go_button" value="MRP SIMULATION"/>
+	      		<div class="text">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
+	      	</div>
+	      	<div class="col-md-1"></div>
+	    </div>
+	   
 	 </ui:define>    
-		
+		<ui:define name="footer">
+        <div class="Copyright_information_HP_inc_text"> <span style="color:#7B7B80;">About Proactive Planning platform &#160;&#160;&#160;&#160;&#160;</span> <span style="color:#7B7B80;">Help And Faq&#160;&#160;&#160;&#160;&#160;</span>
+        &lt; Copyright information &gt;&#160;&#160;&#160;&#160;&#160; ProductAvailability And Alternatives&#160;&#160;&#160;&#160;&#160; GO TO Inventory OPtimization&#160;&#160;&#160;&#160;&#160; MRP simulation&#160;&#160;&#160;&#160;&#160; <span style="color:#7B7B80;">HP inc </span></div>
+       
+    </ui:define>
  </ui:composition>

@@ -36,7 +36,7 @@
 	</ui:define>
     
     <ui:define name="header_left">
-        <span class="header_txt">CLEVER PLAN</span><br/>
+        <span class="header_txt">CLEVERPLAN</span><br/>
         <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
     </ui:define>
     
@@ -47,9 +47,9 @@
     <ui:define name="header_right">
         <div class="row" style="padding-top: 15px;">
 	        <div class="col-md-9 col-sm-9 col-xs-9">
-	        	<span class="braziltime">  <b>28-jul-2015 04:45 PM Brazil Time </b> </span><br/>
+	        	<span class="braziltime">  <b><script>document.write(maindate)</script> , <script>document.write(current_time)</script> Brazil Time </b> </span><br/>
 	        	<span class="braziltime2"><b> WELCOME ALEX </b></span><br/>
-	        	<span class="braziltime3"><b>Your Last Login Was on 22-jul-2015</b></span>
+	        	<span class="braziltime3"><b>Your Last Login Was on <script>document.write(maindate)</script></b></span>
 	        </div>
 	        <div class="col-md-3 col-sm-3 col-xs-3">
 	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
@@ -85,7 +85,7 @@
         <p:column headerText="Selected Configuration">
             <h:outputText value="#{user.selected_configuration}" />
         </p:column>
-        <p:column headerText="Avaliable to Promise">
+        <p:column headerText="Available to Promise">
             <h:outputText value="#{user.avaliable_to_promise}" />
         </p:column> 
         <p:column headerText="Total Weeks in Order Completion">
@@ -102,7 +102,7 @@
            <p:column headerText="Key Feature">
             <h:outputText value="#{user.component}" />
         </p:column>
-         <p:column headerText="value">
+         <p:column headerText="Value">
             <h:outputText value="#{user.selections}" />
         </p:column> 
          <p:column headerText="Description">
@@ -119,7 +119,7 @@
         </p:column> 
         
          <f:facet name="footer"  >
-			<p:inputText id="qb" style="text-align:center;margin-left:30%;margin-right: -13%;height:33px;padding:0%" placeholder="&lt; Quality to block &gt;" />
+			<p:inputText id="qb" style="text-align:center;margin-left:30%;margin-right: -13%;height:33px;padding:0%" placeholder="&lt; Quantity to block &gt;" />
 				 
             <p:commandButton styleClass="go_button" style="float:right;"  value="ADD TO CART " />
          </f:facet>
@@ -136,7 +136,7 @@
 	      <p:commandButton styleClass="centermargin go_button"  value="Review cart" ajax="false" validateClient="true"/><br/>  
 	       <p:commandButton styleClass="centermargin go_button"  value="Empty cart" ajax="false" validateClient="true" /><br/>
 	        <p:commandButton styleClass="centermargin go_button"  value="Confirm order" ajax="false" validateClient="true" /><br/>
-	         <p:commandButton styleClass="centermargin go_button"  value="Avilibility reports" ajax="false" validateClient="true" />
+	         <p:commandButton styleClass="centermargin go_button"  value="Availability reports" ajax="false" validateClient="true" />
        </div>
        </h:form>
     

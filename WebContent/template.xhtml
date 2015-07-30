@@ -66,6 +66,191 @@
 				
 			});
 		</script>
+		<script type="text/javascript">
+		
+		function liveDateTime() {
+	        var currentTime = new Date();
+	        var month = currentTime.getUTCMonth() + 1;
+	        var dateNew = currentTime.getDate();
+	        var year = currentTime.getFullYear();
+	        var hours = currentTime.getUTCHours() - 3;
+			var minutes = currentTime.getUTCMinutes();
+			var seconds = currentTime.getSeconds()
+			
+			
+			
+	    	if(minutes == '0') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '1') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '2') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '3') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '4') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '5') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '6') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '7') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(minutes == '8') {
+	    		minutes = "0"+minutes;
+	    	}
+			if(minutes == '9') {
+	    		minutes = "0"+minutes;
+	    	}
+			
+			if(seconds == '0') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '1') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '2') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '3') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '4') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '5') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '6') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '7') {
+	    		seconds = "0"+seconds;
+	    	}
+			
+			if(seconds == '8') {
+	    		seconds = "0"+seconds;
+	    	}
+			if(seconds == '9') {
+	    		seconds = "0"+seconds;
+	    	}
+	    	
+			var day = currentTime.getUTCDay();
+			if(day == '1') {
+				day = "Monday";
+			}
+			else if(day == '2') {
+				day = "Tuesday";
+			}
+			else if(day == '3') {
+				day = "Wednesday";
+			}
+			else if(day == '4') {
+				day = "Thrusday";
+			}
+			else if(day == '5') {
+				day = "Friday";
+			}
+			else if(day == '6') {
+				day = "Saturday";
+			}
+			else if(day == '7') {
+				day = "Sunday";
+			}
+			
+			if(month == '1') {
+				month = 'January';
+			}
+			else if(month == '2') {
+				month = 'February';
+			}
+			else if(month == '3') {
+				month = 'March';
+			}
+			else if(month == '4') {
+				month = 'April';
+			}
+			else if(month == '5') {
+				month = 'May';
+			}
+			else if(month == '6') {
+				month = 'June';
+			}
+			else if(month == '7') {
+				month = 'July';
+			}
+			else if(month == '8') {
+				month = 'August';
+			}
+			else if(month == '9') {
+				month = 'September';
+			}
+			else if(month == '10') {
+				month = 'October';
+			}
+			else if(month == '11') {
+				month = 'November';
+			}
+			else if(month == '12') {
+				month = 'December';
+			}
+			
+
+            var suffix = "AM";
+            
+            if (hours >= 12) {
+                suffix = "PM";
+                hours = hours - 12;
+            }
+            
+            if (hours == 0) {
+                hours = 12;
+            }
+            
+            
+            var current_time = hours + ":" + minutes + ":" + seconds +"  " + suffix;
+				
+			var maindate = month+" "+dateNew+" "+year;
+			
+			
+			
+			
+			$(document).ready(function(){
+				$("#maintime").text(current_time);
+				$("#maindate").text(day+", "+maindate);
+				
+			})
+			
+			setTimeout("liveDateTime()",1000);
+		}	
+			liveDateTime();
+			
+			
+			
+			
+        </script>
 	
 </h:head>
 

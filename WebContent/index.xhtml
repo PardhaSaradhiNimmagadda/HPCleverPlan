@@ -20,7 +20,15 @@
     <ui:define name="header_right">
         <div class="row" style="padding-top: 15px;">
 	        <div class="col-md-9 col-sm-9 col-xs-9">
-	        	<span class="braziltime">  <b>Brazil Time, 04:45 PM</b> <br/> Saturday, 25th July, 2015</span> 
+	        	<div class="braziltime">  
+	        		<b>Brazil Time, </b>
+	        		<span id="maintime">
+	        			Date
+	        		</span><br/> 
+	        		<span id="maindate">
+	        			Time
+	        		</span>
+	        	</div> 
 	        </div>
 	        <div class="col-md-3 col-sm-3 col-xs-3">
 	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
@@ -31,7 +39,7 @@
     
     <ui:define name="left_sidebar">
     	<div class="hpblue leftsidebar">
-	        <div class="clever_plan_text">CLEVER PLAN</div>
+	        <div class="clever_plan_text">CLEVERPLAN</div>
 			<div class="clear_plan_caption">HP Brazil Proactive Planning Platform</div>
 		</div>
     </ui:define>

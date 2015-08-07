@@ -14,8 +14,11 @@ public class UserSelectedView implements Serializable {
 	private String total_weeks_in_order_completion;
 	private String component;
 	private String selections;
-	private String availabel;
+	private String available;
 	private String weeks;
+	private String description;
+	private String price;
+	private String comments;
 	
 	
 	
@@ -31,12 +34,15 @@ public class UserSelectedView implements Serializable {
 	
 
 	public UserSelectedView(int id, String component, String selections,
-			String availabel, String weeks) {
+			String available,String description,String weeks,String price,String comments) {
 		this.id = id;
 		this.component = component;
 		this.selections = selections;
-		this.availabel = availabel;
+		this.available = available;
 		this.weeks = weeks;
+		this.description=description;
+		this.price=price;
+		this.comments=comments;
 	}
 
 	public UserSelectedView(int id, String selected_configuration,
@@ -88,12 +94,12 @@ public class UserSelectedView implements Serializable {
 		this.selections = selections;
 	}
 
-	public String getAvailabel() {
-		return availabel;
+	public String getAvailable() {
+		return available;
 	}
 
-	public void setAvailabel(String availabel) {
-		this.availabel = availabel;
+	public void setAvailable(String available) {
+		this.available = available;
 	}
 
 	public String getWeeks() {
@@ -102,6 +108,30 @@ public class UserSelectedView implements Serializable {
 
 	public void setWeeks(String weeks) {
 		this.weeks = weeks;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
 	}
 
 	

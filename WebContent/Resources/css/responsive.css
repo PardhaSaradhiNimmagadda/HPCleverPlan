@@ -1,0 +1,21 @@
+@media (max-width: 480px) { 
+	
+	body {
+		overflow-y: scroll !important;
+		overflow-x: hidden !important;	
+	}
+	
+	.clever_plan_text, .clear_plan_caption {
+		padding: 0px !important;
+		text-align: center !important;
+	}
+	
+	.leftsidebar {
+		min-height: 20px !important;
+	}
+	
+	.inputbox {
+		width: 100% !important;
+	}
+
+}

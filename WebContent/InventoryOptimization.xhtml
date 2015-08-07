@@ -1,0 +1,287 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="template.xhtml">
+                
+	<ui:define name="title">Inventory Optimization</ui:define>
+	
+    <ui:define name="head">
+     <style>
+	 	.ui-datatable thead th{
+			background-color:#0096D6 ;
+		}
+		
+		.ui-datatable .ui-datatable-header{
+			background-color:#FFF;
+		}
+		
+	 	.ui-datatable tfoot td {
+			padding-right: 10cm;
+		}
+	
+     	.ui-widget-header {
+			background: none !important
+		}
+	
+		.ui-datatable .ui-datatable-header, .ui-datatable .ui-datatable-footer {
+			border:0px;
+		}
+	
+		.ui-datatable-footer {
+   	 		margin-top: 10px !important;
+   		}
+   		
+   		 .panel-heading {
+   		 	font-size: 12px;
+			font-weight: bold;
+			text-align: center;
+   		 }
+   		 
+   		 .panel-text {
+   		 	font-size: 11px;
+			text-align: center;
+   		 }
+   		 
+   		 .filtersmargin {
+   		 	margin-left: 10px;
+   		 	margin-right: 10px;
+   		 } 		 
+	</style>
+	
+	</ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">INVENTORY OPTIMIZATION</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="float: right; font-size: 12px; margin-right: 15px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>  
+	   
+<ui:define name="left_sidebar">
+	<div class="filtersmargin">
+	  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+				<div class="blockHeading headercolor" >PN FILTERS</div>
+				<div class="blockContent1 contentcolor">PRODUCT STAGE:FGI,COMPONENT</div>
+				 
+				<div class="blockContent1 headercolor">PART NUMBER,FAMILIES:<br/>HDD,PROCESSOR,RAM..</div>
+				<div class="blockContent1 contentcolor">SPECIFIC PART NUMBERS</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">PRODUCT FILTERS</div>
+	     		<div class="blockContent2 contentcolor">PN TYPE: BUY-SELL/GTK/TK</div>
+	     		
+	     		<div class="blockHeading headercolor">IMPORTANT FILTERS</div>
+	     		<div class="blockContent2 contentcolor">PN TYPE:IMPORTED/LOCAL</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">SUPPLIER FILTERS</div>
+		      	<div class="blockContent3 contentcolor">SUPPLIER NAME</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">A B C Class</div>
+	     		<div class="blockContent3 contentcolor">A b c</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">Lead time</div>
+		      	<div class="blockContent3 contentcolor">Lead time buckets H, M, L</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">Inventory $</div>
+	     		<div class="blockContent3 contentcolor">Inventory$ buckets: H, M, L</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">MONTHS-YEAR</div>
+		      <div class="blockContent3 contentcolor">MONTHS-YEARS SELECTOR FOR HISTORICAL ANALYSIS</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading headercolor">FORECAST ERROR</div>
+	     		<div class="blockContent3 contentcolor">H, M, L</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div  class="blockHeading1">REVIEW PARAMETERS</div>
+			      <div class="blockContent">
+			      	<div class="row">
+			      		<div class="col-md-6 NOP">
+			      			What IF
+			      		</div>
+			      		<div class="col-md-6 NOP">
+			      			Demand Variation <br/>
+			      			Lead Time Variation
+			      		</div>
+			      	</div>
+			      </div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+	  			<div  class="blockHeading1">REVIEW REPORTS</div>
+	     		<div class="blockContent">
+			      	<div class="row">
+			      		<div class="col-md-6 NOP">
+			      			Reports
+			      		</div>
+			      		<div class="col-md-6 NOP">
+			      			Sliders
+			      		</div>
+			      	</div>
+		      	</div>
+		  	</div>
+	  	</div>
+	  </div>   			     	
+</ui:define>
+
+	     
+<ui:define name="main_content">
+        <div class="row"> 
+	        <div class="col-md-6">
+	        	<h:form id="form">
+	        		<div class="x-panel-body">
+	        			QUICK PARAMETER UPDATES
+	        		</div>
+			        <p:panelGrid style="width: 100%;">
+			       
+				         <p:row>
+				            <p:column styleClass="panel-heading" colspan="1">PN</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">SERVECE LEVEL</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">DEFAULT SAFTY STOCK</p:column>
+				            <p:column styleClass="panel-heading">DEFAULT FORCAST</p:column>
+				        </p:row>
+				 
+				  
+					    <p:row>
+					        <p:column styleClass="panel-text"  rowspan="3">XXXXX</p:column>
+					        <p:column styleClass="panel-text" >PRESENT VALUE</p:column>
+					        <p:column styleClass="panel-text">PRESENT VALUE</p:column>
+					        <p:column styleClass="panel-text">PRESENT VALUE</p:column>
+					    </p:row>
+				    
+					 	<p:row>
+					 	    <p:column styleClass="panel-text">NEW VALUE</p:column>
+					        <p:column styleClass="panel-text">NEW VALUE</p:column>
+					        <p:column styleClass="panel-text">NEW VALUE</p:column>
+						 </p:row>
+					 	<p:row>
+					 	    <p:column styleClass="panel-text">SAVE</p:column>
+					 	    <p:column styleClass="panel-text">SAVE</p:column>
+					 	    <p:column styleClass="panel-text">SAVE</p:column>
+						 </p:row>
+				
+				 	</p:panelGrid>
+				 	<div class="y-panel-body">
+	        			SAFTEY STOCK DETAILS
+	        		</div>
+			         <p:panelGrid style="width: 100%;">
+			 
+				        <p:row>
+				            <p:column styleClass="panel-heading" colspan="1">PN</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">BUSINESS TARGET</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">OPTIMIZED MIN SAFETY STOCK</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">OPTIMIZED OPTIMAL SAFETY STOCK</p:column>
+				            <p:column styleClass="panel-heading">OPTIMIZED MAX SAFETY STOCK</p:column>
+				            
+				        </p:row>
+			 
+			  
+					    <p:row>
+					        <p:column styleClass="panel-text" rowspan="2">XXXXX</p:column>
+					        <p:column styleClass="panel-text">WOS</p:column>
+					        <p:column styleClass="panel-text">WOS</p:column>
+					        <p:column styleClass="panel-text">WOS</p:column>
+					        <p:column styleClass="panel-text">WOS</p:column>
+					    </p:row>
+					    
+					 	<p:row>
+					 	    <p:column styleClass="panel-text">$</p:column>
+					        <p:column styleClass="panel-text">$</p:column>
+					        <p:column styleClass="panel-text">$</p:column>
+					        <p:column styleClass="panel-text">$</p:column>
+						 </p:row>
+			 
+					</p:panelGrid>
+					<div class="y-panel-body">
+	        			OVERALL INVENTORY
+	        		</div>
+			 		
+			        <p:panelGrid style="width: 100%;">
+				        <p:row>
+				        <div style="margin-bottom:20% !important">
+				            <p:column styleClass="panel-heading" colspan="1">PN</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">OPTIMIZED OPTIMAL SAFETY STOCK</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">LEAD TIME FORECAST</p:column>
+				            <p:column styleClass="panel-heading" colspan="1">MIN INVENTORY</p:column>
+				             <p:column styleClass="panel-heading" colspan="1">MAX INVENTORY</p:column>
+				             </div>
+				        </p:row>
+					    <p:row>
+					        <p:column styleClass="panel-text" rowspan="2">XXXXX</p:column>
+					        <p:column styleClass="panel-text">WOS</p:column>
+					        <p:column styleClass="panel-text">WOS</p:column>
+					        <p:column styleClass="panel-text">UNITS (SS)</p:column>
+					        <p:column styleClass="panel-text">UNITS (SS+FCST)</p:column>
+					    </p:row>
+					 	<p:row>
+					        <p:column styleClass="panel-text">$</p:column>
+					        <p:column styleClass="panel-text">$</p:column>
+					        <p:column styleClass="panel-text">$</p:column>
+					        <p:column styleClass="panel-text">$</p:column>
+						 </p:row>
+			 
+					</p:panelGrid>       
+			</h:form>
+        </div>
+        <div class="col-md-6">
+	         <div class="row">
+       		 	<div class="col-md-6 col-sm-6 col-xs-6 NO NOT">
+	         		<div class="blockHeader fontheader">INVENTORY TRADEND CHART</div>
+		     		<div class="blocktext">Actual Inventory Vs Optimized Inventory-WOS</div>	
+			   		<div class="blockHeader">$ INVENTORY TREAD</div>
+		     		<div class="blocktext">Actual Inventory Vs Optimized Inventory</div>	
+					<div class="blockHeader">Safety Stack</div>
+		     		<div class="blocktext">Min/ Optimal/ Maximum safety stock in WOS</div>	
+				 </div>
+	        	<div class="col-md-6 col-sm-6 col-xs-6 NO">
+	                <div class="blockHeader">FORCEST ACCURACY</div>
+		     		<div class="blocktext">Business forecast Accuracy</div>	
+			        <div class="blockHeader">RISK ASSESSMENT</div>
+		     		<div class="blocktext">Potential Future Shortage Weeks</div>	
+					<div class="blockHeader">BEST Forecast Accuracy</div>
+		     		<div class="blocktext">Best Forecast(Actual,Corrected or this system generated)accuracy</div>	
+			   </div>
+         	</div>
+		</div>
+    </div>
+</ui:define>  
+<ui:define name="footer">
+ 		<div class="Copyright_information_HP_inc_text"> <span style="color:#7B7B80;">About Proactive Planning platform &#160;&#160;&#160;&#160;&#160;</span> <span style="color:#7B7B80;">Help And Faq&#160;&#160;&#160;&#160;&#160;</span>
+				 &lt; Copyright information &gt;&#160;&#160;&#160;&#160;&#160; ProductAvailability And Alternatives&#160;&#160;&#160;&#160;&#160; GO TO Inventory OPtimization&#160;&#160;&#160;&#160;&#160; MRP simulation&#160;&#160;&#160;&#160;&#160; <span style="color:#7B7B80;">HP inc </span></div>
+</ui:define> 
+      
+ 
+ </ui:composition>

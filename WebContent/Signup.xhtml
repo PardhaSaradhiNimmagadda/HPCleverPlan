@@ -1,0 +1,151 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="template.xhtml">
+
+    <ui:define name="head">
+        
+    </ui:define>
+    
+    <ui:define name="header_left">
+        
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="welcome_txt">Welcome</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<div class="braziltime">  
+	        		<b>Brazil Time, </b>
+	        		<span id="maintime">
+	        			Date
+	        		</span><br/> 
+	        		<span id="maindate">
+	        			Time
+	        		</span>
+	        	</div> 
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        </div>
+	    </div>
+    </ui:define>
+    
+    
+    <ui:define name="left_sidebar">
+    	<div class="hpblue leftsidebar">
+	        <div class="clever_plan_text">CLEVERPLAN</div>
+			<div class="clear_plan_caption">HP Brazil Proactive Planning Platform</div>
+		</div>
+    </ui:define>
+    
+    <ui:define name="main_content">
+        <div class="row">
+			<div class="col-md-5 col-sm-7 main_content">
+			<div>
+				<h:outputLink value="index.html"><h:graphicImage value="Resources/images/back.png" style="width: 20px"/></h:outputLink> <span style="line-height: 20px; padding-left: 5px;"><h:outputLink value="index.html">Back</h:outputLink></span><br/><br/>
+			</div>
+			<span style="font-size: 22px;font-family: HPBold; color: #0096D6;">New User Registration</span><br/>
+			<span  style="font-size: 12px; color: #0096D6;">Please fill below form and click on "GO" to send request to System Adminstrator</span>
+			<br/><br/>
+				<!-- Login Details -->
+				<h:form>
+				<div class="row">
+					<div class="col-md-12">
+						<p:messages id="msgs" />
+					</div>
+				</div>
+				<div class="row">
+				
+					<div class="col-md-6">
+		 
+			               <p:inputText styleClass="inputbox"  style="padding: 9px;" id="firstname" value="#{userView.firstname}" required="true"  label="em" 
+						       requiredMessage="Enter First Name" validatorMessage="Invalid  First Name"  placeholder="FIRST NAME" >
+											        
+								<f:validateLength minimum="1" maximum="16"/>
+										         
+						 </p:inputText>
+					</div>
+					<div class="col-md-6">
+						<p:inputText styleClass="inputbox"  style="padding: 9px;" id="lastname" value="#{userView.lastname}" required="true"  label="em" requiredMessage="Enter Last Name"
+					        validatorMessage="Invalid Last Name" placeholder="LAST NAME" >
+				      	 	<f:validateLength  maximum="16"/>
+				         
+					    </p:inputText> 
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">   
+						<p:inputText styleClass="inputbox" style="padding: 9px;" id="emailid2" value="#{userView.hp_email}" required="true"  label="em2" requiredMessage="Enter HP Email"
+						   validatorMessage="Invalid HP Email"     placeholder="HP EMAIL" >
+					         
+					        <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*(hp)\.(com)"/>
+								 
+			            </p:inputText>       
+	         			
+					</div>
+					<div class="col-md-6">          
+				         <p:inputText styleClass="inputbox" style="padding: 9px;" id="desig" value="#{userView.designation}" required="true"  label="em2" requiredMessage="Enter Designation"
+					        validatorMessage="Invalid Designation" placeholder="DESIGNATION" >
+				      				<f:validateLength  maximum="16"/>
+				         
+					    	</p:inputText>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+	               		<p:inputText styleClass="inputbox" style="padding: 9px;" id="org" value="#{userView.organization}" required="true"  label="em2" requiredMessage="Enter Organization"
+				        	validatorMessage="Invalid Organization" placeholder="ORGANIZATION" >			         
+				 		 </p:inputText>
+				   	</div>
+					<div class="col-md-6"> 
+						<p:inputText styleClass="inputbox" style="padding: 9px;" id="managername" value="#{userView.managers_name}" required="true"  label="em2" requiredMessage="Enter Manager's Name"
+					        			validatorMessage="Invalid Manager's Name" placeholder="MANAGER'S NAME(FIRST NAME,LAST NAME)" >
+			    		  </p:inputText>
+			    		
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6"> 	 
+						<p:inputText styleClass="inputbox" style="padding: 9px;" id="manager"  value="#{userView.managers_hp_email}" required="true"  label="em3" requiredMessage="Enter Manager's HP Email"
+				        validatorMessage="Invalid Manager's Email" placeholder="MANAGER'S HP EMAIL" >
+			         
+					    	<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*(hp)\.(com)"/>
+			 
+				  		</p:inputText>       
+				         
+					</div>
+					<div class="col-md-6"> 	         
+			         	<p:inputText styleClass="inputbox" style="padding: 9px;" id="business" value="#{userView.business_justification_for_access_request}" required="true"  label="em3" requiredMessage="Enter Business Justification"
+					       		placeholder="BUSINESS JUSTIFICATION FOR ACCESS REQUEST" >
+						 </p:inputText>	       
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+                       <p:commandButton styleClass="go_button pull-right" style="margin-top: 5px;padding:5px" value="Go" ajax="false"   validateClient="false"/>
+				 	</div>
+				 </div>
+					
+					
+
+			       
+						    
+	        	</h:form>
+	        	<!--  Login End -->
+			</div>
+			<div class="col-md-7 col-sm-5 right_content">
+				<h:graphicImage value="Resources/images/brazil_map.png" />
+			</div>
+		</div>
+    </ui:define>
+    
+    <ui:define name="footer">
+          </ui:define>
+</ui:composition>

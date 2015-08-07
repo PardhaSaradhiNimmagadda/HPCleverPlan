@@ -22,8 +22,11 @@ public class UserServices implements Serializable{
 	private final static String[] total_weeks_in_order_completion;
 	private final static String[] component;
 	private final static String[] selections;
-	private final static String[] availabel;
+	private final static String[] available;
 	private final static String[] weeks;
+	private final static String[] description;
+	private final static String[] price;
+	private final static String[] comments;
 	
 	static{
 		selected_configuration=new String[1];
@@ -59,24 +62,53 @@ public class UserServices implements Serializable{
 		selections[6]="SELECTED CONFIG";
 		
 		
-		availabel=new String[7];
-		availabel[0]="#AVBL";
-		availabel[1]="#AVBL";
-		availabel[2]="#AVBL";
-		availabel[3]="#AVBL";
-		availabel[4]="#AVBL";
-		availabel[5]="#AVBL";
-		availabel[6]="#AVBL";
+		available=new String[7];
+		available[0]="1";
+		available[1]="2";
+		available[2]="3";
+		available[3]="4";
+		available[4]="5";
+		available[5]="6";
+		available[6]="7";
 		
 		
 		weeks=new String[7];
-		weeks[0]="#WEEKS";
-		weeks[1]="#WEEKS";
-		weeks[2]="#WEEKS";
-		weeks[3]="#WEEKS";
-		weeks[4]="#WEEKS";
-		weeks[5]="#WEEKS";
-		weeks[6]="#WEEKS";
+		weeks[0]="1";
+		weeks[1]="2";
+		weeks[2]="3";
+		weeks[3]="4";
+		weeks[4]="5";
+		weeks[5]="6";
+		weeks[6]="7";
+		
+		description=new String[7];
+		description[0]="HDD 500GB 5400RPM Fixed";
+		description[1]="RAM 8GB 1600 DDR3L 1DM BRZL";
+		description[2]="LCD 14 LED HD SVA AG flat BLK";
+		description[3]="ACADPT 65 Watt Smart nPFC";
+		description[4]="BATT 4C 41 WHr";
+		description[5]="LOC W8.1EM64 STD BRZL";
+		description[6]="KBD BLK ISK STD TP BRZL";
+		
+		price=new String[7];
+		price[0]="2,500 USD";
+		price[1]="1,500 USD";
+		price[2]="2,500 USD";
+		price[3]="1,500 USD";
+		price[4]="1,500 US";
+		price[5]="2,500 USD";
+		price[6]="1,500 USD";
+		
+		comments=new String[7];
+		comments[0]="Sample Comment";
+		comments[1]="Sample Comment";
+		comments[2]="Sample Comment";
+		comments[3]="Sample Comment";
+		comments[4]="Sample Comment";
+		comments[5]="Sample Comment";
+		comments[6]="Sample Comment";
+		
+		
 }
 	private List<UserSelectedView> Views;
 	private UserSelectedView SelectedViews;
@@ -92,8 +124,12 @@ public class UserServices implements Serializable{
 	
 	public List<UserSelectedView> configurationDetails(int size){
     	List<UserSelectedView> list=new ArrayList<UserSelectedView>();
-    	for(int i=0;i<size;i++){
-    	list.add(new UserSelectedView(i++,getcomponent(),getselections(),getavailabel(),getweeks()));
+    	String com;
+    	for(int i=0;i<component.length;i++){
+    		System.out.println("length"+component.length+"-------"+i);
+    		com=component[i];
+    	list.add(new UserSelectedView(i+1,com,getselections(),getavailable(),getdescription(),getweeks()
+    			,getprice(),getcomments()));
     	}
     	System.out.println(list.size());
     	return list;
@@ -122,8 +158,8 @@ public class UserServices implements Serializable{
 	
 	private void populateRandomConfigurationDetails(List<UserSelectedView> list, int size) {  
         for(int i = 0 ; i < size ; i++)  
-            list.add(new UserSelectedView(i++,getcomponent(),getavailabel(),
-            		getselections(),getweeks()));  
+            list.add(new UserSelectedView(i++,getcomponent(),getavailable(),getdescription(),
+            		getselections(),getweeks(),getprice(),getcomments()));  
     } 
 	private void populateRandomSelectedConfiguration(List<UserSelectedView> list, int size) {  
         for(int i = 0 ; i < size ; i++)  
@@ -150,13 +186,22 @@ public class UserServices implements Serializable{
 	private String getselections(){
 		return selections[(int) (Math.random()*7)];
 	}
-	private String getavailabel(){
-		return availabel[(int) (Math.random()*7)];
+	private String getavailable(){
+		return available[(int) (Math.random()*7)];
 	}
 	
 	private String getweeks(){
 		return weeks[(int) (Math.random()*7)];
 	}
 	
+	private String getdescription(){
+		return description[(int) (Math.random()*7)];
+	}
+	private String getprice(){
+		return price[(int) (Math.random()*7)];
+	}
+	private String getcomments(){
+		return comments[(int) (Math.random()*7)];
+	}
 	
 }

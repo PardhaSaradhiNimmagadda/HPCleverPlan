@@ -86,8 +86,8 @@ body {
 	color: #fff;
 	line-height: 18px;
 }
-.braziltime {
-	color: #B0B0B0 ;
+.braziltime, .maintime, .maindate {
+	color: #0096D6;
 	font-style:oblique;
 	
 }
@@ -113,11 +113,9 @@ body {
 }
 
 .paddingtop {
-	padding-top: 40%;
-	margin-left: 60px;
-	margin-right: 90px;
+	padding-top: 97px;
 	border-color: #0096D6;
-
+	margin-left: 15px;
 	
 }
 
@@ -132,7 +130,8 @@ body {
 
 
 .main-content2 {
-	padding: 20px !important;
+	padding-top: 50px !important;
+	
 }
 
 .right_content {
@@ -141,13 +140,7 @@ body {
 	text-align: center;
 }
 
-.inputbox {
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	height: 40px !important;
-	line-height: 40px !important;
-}
+
 
 .go_button {
 	background: #0096D6 !important;
@@ -165,6 +158,7 @@ body {
 }
 
 .Copyright_information_HP_inc_text {
+	display: none;
 	font-size: 16px;
 	text-align: center;
 	color: #0096D6;
@@ -172,7 +166,7 @@ body {
 .para_txt {
     font-size: 20px;
     color: rgb(0, 150, 214);
-    padding-left: 91px;
+    text-align: center;
 }
 
 .ui-state-default {
@@ -194,204 +188,6 @@ body {
  	padding-left: 5px !important;
 }
 
-/* .container {
-	width: 940px;
-	margin: 10px auto;
-	
-}
-.footer {
-    position:fixed;
-    bottom:0;
-    align:center;
-}
-
-
-
-
-.header {
-	width: 100%;
-  	height: 50px;
-  	display: inline-block;
-}
-
-.one_third_column {
-	width: 33.3%;
-	display: inline-block;
-	float: left;
-}
-
-.left_sidebar {
-	margin: 0 auto;
-}
-
-.clever_plan_text {
-	width: 100%;
-	text-align: center;
-	padding-top: 150px;
-	padding-bottom: 150px;
-	color:#fff;
-}
-.headerColumn {
-	min-height: 50px;
-}
-
-
-.welcome_txt {
-	font-size: 22px;
-	font-weight: bold;
-	color:#fff;
-}
-
-
-.footer {
-	clear: both;
-	margin-top: 5px;
-}
-
-.Copyright_information_HP_inc_text{
-	width:80 !important%;
-	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin:10px 20px;
-	border:1px solid;
-	text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 10px 9px;
-  border: 3px solid #0096D6;
-  margin-left: 174px;
-  padding-left: 96px;
-  margin-right: -171px;
-    margin-bottom: 250px;
-}
-
-.hp_logo{
-	position: absolute;
-    top: 4px;
-    right: 198px;
-}
-
-.login_info {
-	width:15px;
-	padding-left:83px;
-	font-size:8px;
-}
-
-.Copyright_information{
-		word-spacing: 30px;
-	font-size:10px;
-	 padding-top: 5px;
-  padding-bottom: 5px;
-  border: 3px solid #0096D6;
-  margin-left: 174px;
-  margin-right: -171px;
-    margin-bottom:200px;
-}
-
-.blue{
-	color:#0096D6;
-}
-
-
-.content{
-	align:center;
-	width:194%;
-	height:317px;
-}
-
-.test1{
-	align:left;
-	background: #0096D6;
-	color:#fff;
-	margin-left: 119px;
-padding-bottom: 13px;
-}
-
-.test2{	
-	align:center;
-	background: #0096D6;
-	color:#fff;
-	margin-left: 119px;
-padding-bottom: 13px;
-align:center;
-}
-
-.test3{
-	align:right;
-	background: #0096D6;
-	color:#fff;
-margin-left: 119px;
-padding-bottom: 13px;
-align:right;
-}
- li{
-	display:inline;
-}
-
-.mainContents{
-	
-	margin-bottom: 16px;
-	}
-.mainContent{
-	
-	font-size:13px;
-	height:23px;
-	padding: 12px;
-	background-color: #0096D6;
-	color:white;
-	
-	text-align:center;
-	width: 18%;
-	display: inline-flex;
-}
-.subcontent{
-	
-}
-#velcome{
-	   margin-top: 147px;
-  		margin-left: 34px;
-}
-#choose{
-	  position: absolute;
-  border: 1px solid #0096D6;
-  margin-left: 30px;
-  margin-top: -46px;
-  top: 125px;
-  padding: 19px;
-  padding: 13px 132px;
-  font-size: 21px;
-  text-align: center;
-  color:#0096D6;
-}
-.one_middle_column{
-	width:50%!important;
-	float:left;
-}
-.main_column_middle_third_column{
-	
-}
-.subTitle_one{
-	font-size: 8px;
-	height:23px;
-	padding: 4px;
-	background-color: #0096D6;
-	color: blue;
-}
-.subTitle_two{
-	font-size: 8px;
-	height:23px;
-	padding: 4px;
-	background-color: #0096D6;
-	color: blue;
-}
-.subTitle_third{
-	font-size: 8px;
-	height:23px;
-	padding: 4px;
-	background-color: #0096D6;
-	color: blue;
-} */
 .image{
 	margin-right: 25%;
 }
@@ -437,12 +233,13 @@ align:right;
 
 }
 
-.ui-datatable td {
-	
+.ui-datatable td, .ui-datatable tfoot td {
     width: 30px !important;
-	height: 30px;
-	line-height: 20px;
- 	
+    height: 30px;
+    line-height: 15px;
+    font-family: HPLight !important;
+    font-size: 13px;
+}
 }
 
 .unitsneeded {
@@ -462,21 +259,20 @@ align:right;
 	
 .border {
     border: 2px solid #0096D6;
-    width: 100%;
     margin-top: 10%;
     text-align: center;
     font-size: 32px;
     color: #0096D6;
+    margin-right: 15px !important;
 }
 
 .welcomeButton {
 	 clear: both;
 	 border-color: #0096D6;
-	 width: 155px;
+	 width: 198px;
 	 min-height: 76px;
 	 font-size: 16px;
 	 margin-top: 20px;
-	 margin-left: -15px;
 }
 
 .text-center{
@@ -484,11 +280,11 @@ align:right;
 }
 
 .text{
-	 font-size: 10px;
-	 width: 160px;
+	 font-size: 12px;
+	 width: 198px;
 	 color: #0096D6;
-	 font-family: HPLight;
-	 font-style: italic;
+	 font-family: HPLight !important;
+	 text-align: center;
 }
 
 .ui-datatable thead th {
@@ -497,3 +293,217 @@ align:right;
 .ui-widget {
   	font-family: HPRegular !important;
 }
+
+.inputbox {
+	line-height: 40px !important;
+	box-shadow: none !important;
+	font-family: HPItalic !important;
+	color: #767676 !important;
+}
+
+.inputboxwidth {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+.NoPadding {
+	padding: 0px !important;
+}
+
+
+
+
+
+
+/* Swapna CSS */
+
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+  box-shadow: none !important;
+}
+
+.Cancel{
+	background: #0096D6 !important;
+	box-shadow: none !important;
+	color: #fff !important;
+	font-family: 'HPRegular';
+}
+
+.blocktext2{
+	border: 2px solid #0096D6;
+	text-align: center;
+	min-height: 100px;
+	padding: 37px;
+	
+}
+
+.blocktext3{
+	border: 2px solid #0096D6;
+	text-align: center;
+	min-height: 110px;
+	padding: 36px;
+	
+}
+
+.vertical-border{
+	height:570px;
+	width:1px;
+	border:0px;
+	border-left:3px;
+	border-style:solid;
+	border-color:#0096D6;
+	margin-left: 106%;
+	
+}
+
+.sub-block{
+	width: 80px;
+    color:#fff !important;
+}
+
+.sub-block1{
+	color:#fff !important;
+}
+
+
+.blockHeading1{
+	text-align: center;
+	font-family: HPBold;
+	margin-top: 1px; 
+	background: #5a5a5a;
+	margin-left: 0px;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+}
+
+
+
+.sub-block2{
+	color:#000 !important;
+	
+}
+
+
+.x-panel-body{
+	 background-color: #eb7b31 !important;
+	 color: #fff;
+	 padding: 10px;
+	 text-align: center;
+	 margin-top: 5px;
+}
+
+.y-panel-body{
+	 background-color: #5b9bd4 !important;
+	 color: #fff;
+	 padding: 10px;
+	 text-align: center;
+	margin-top: 5px;
+}
+
+.z-panel-body{
+	background-color: #5b9bd4 !important;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.font-size{
+	 font-size:20px;
+	 margin-bottom: 1px;
+}
+
+.blockHeading {
+	 border: 1px solid #0096D6;
+	 background: #ccc;
+	 text-align: center;
+	 font-family: HPBold;
+	 margin-top: 5px;
+	 margin-left: 0px;
+	 width: 100%;
+	 color: #fff;
+	 font-size: 16px;
+}
+
+.blockContent {
+	 background: #5A5A5A;
+	 font-family: HPLight;
+	 padding: 5px;
+	 color: #fff;
+	 min-height: 100px;
+	 width: 100%;
+	 border: 1px solid #fbcab3;
+	 text-align: center;
+}
+
+.NOP {
+	 /* padding-left: 0px !important; */
+	 padding-right: 0px !important;
+}
+
+.blockHeader{
+	 border: 2px solid #0096D6;
+	 margin-top: 4px;
+	 text-align: center;
+	 border-bottom: 0px;
+	 font-size: 14px;
+	font-weight: bold;	 
+}
+
+.blocktext{
+	 border: 2px solid #0096D6;
+	 text-align: center;
+	 min-height: 142px;
+	 padding-top: 15%;
+	 font-size: 12px;
+}
+
+.headercolor{
+ background: #0096D6;
+}
+
+.headercolor1{
+	 background:#ADD8E6;
+	 border: 1px solid  #0096D6;
+	 padding:2%;
+}
+
+.contentcolor{
+	 background: #ADD8E6;
+	 border: 1px solid  #0096D6;
+ 
+}
+
+.NO{
+   padding-left: 0px !important;
+   margin-right: -9px;  
+}
+
+.blockContent1{
+	 text-align: center;
+	 font-family: HPlight;
+	 margin-left: 0px;
+	 width: 100%;
+	 min-height: 45px;
+}
+
+.blockContent2{
+	 text-align: center;
+	 font-family: HPlight;
+	 margin-left: 0px;
+	 width: 100%;
+	 min-height: 53px;
+}
+
+.blockContent3{
+     text-align: center;
+	 font-family: HPlight;
+	 margin-left: 0px;
+	 width: 100%;
+	 min-height: 60px;
+}
+
+
+/* Swapna CSS END */

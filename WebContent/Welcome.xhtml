@@ -5,9 +5,14 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="template.xhtml">
 
+    <ui:define name="title">Dashboard</ui:define>
+    
+    
     <ui:define name="head">
         
     </ui:define>
+    
+    
     
     <ui:define name="header_left">
         
@@ -20,9 +25,9 @@
     <ui:define name="header_right">
         <div class="row" style="padding-top: 15px;">
 	        <div class="col-md-9 col-sm-9 col-xs-9">
-	        	<span class="braziltime3">  <b>28-jul-2015 04:45 PM Brazil Time </b> </span><br/>
-	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="margin-right: -12%; float:right; font-size: 9px; color:#0096D6" value="LOGOUT"/></span><br/>
-	        	<span class="braziltime3"><b>Your Last Login Was on 22-jul-2015</b></span>
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
 	        </div>
 	        <div class="col-md-3 col-sm-3 col-xs-3">
 	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
@@ -38,25 +43,37 @@
 		</div>
     </ui:define>
      <ui:define name="main_content">
-        <div class="row"> 
-        	<div class="col-md-1"></div>
-		    <div class="col-md-10 border">CHOOSE YOUR WORK AREA</div>
-		    <div class="col-md-1"></div>
-		</div>
+       <div class="row">
+       		<div class="col-md-1"></div>
+       		<div class="col-md-10">
+       			<div class="row border">
+		       		<div class="col-md-12" style="margin-right: 15px;">CHOOSE YOUR WORK AREA</div>
+		       </div> 
+       		</div>
+       		<div class="col-md-1"></div>
+       </div>
+
 	    <div class="row">
-	        <div class="col-md-1"></div>
-	    	<div class="col-md-3 pull-left">
-	    		<p:commandButton styleClass="welcomeButton go_button"  value="PRODUCT AVAILBILITY AND ALTERNATIVES"/>
-	    		<div class="text">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
-	    	</div>  
-	       	<div class="col-md-4 text-center">
-	      		<p:commandButton styleClass="welcomeButton go_button"  value="INVENTORY OPTIMIZAION"/>
-	      		<div class="text" style="margin-left: 57px;">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
-	      	</div>
-	      	<div class="col-md-3 pull-right">
-	      		<p:commandButton styleClass="welcomeButton go_button" value="MRP SIMULATION"/>
-	      		<div class="text">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
-	      	</div>
+	    	<div class="col-md-1"></div>
+	    	<div class="col-md-10">
+	    		<div class="row">
+		    		<div class="col-md-4 pull-left NoPadding">
+			    		<p:commandButton styleClass="welcomeButton go_button"  value="PRODUCT AVAILBILITY AND ALTERNATIVES"/>
+			    		<p style="clear: both;"></p>
+			    		<div class="text">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
+			    	</div>  
+			       	<div class="col-md-4 text-center NoPadding">
+			      		<p:commandButton styleClass="welcomeButton go_button"  value="INVENTORY OPTIMIZAION"/>
+			      		<p style="clear: both;"></p>
+			      		<div class="text" style="margin-left: 25px;">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
+			      	</div>
+			      	<div class="col-md-4">
+			      		<p:commandButton styleClass="welcomeButton go_button pull-right" style="margin-right: 15px;" value="MRP SIMULATION"/>
+			      		<p style="clear: both;"></p>
+			      		<div class="text" style="margin-left: 15px;">MAKE IT DEFAULT AND TAKE ME DIRECTLY HERE IN FUTURE </div>
+			      	</div>
+			      </div>
+	    	</div>
 	      	<div class="col-md-1"></div>
 	    </div>
 	   

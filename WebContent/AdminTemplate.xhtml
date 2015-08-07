@@ -18,18 +18,55 @@
         <!-- <link rel="shortcut icon" type="image/png" href="#{request.contextPath}/resources/main/images/favicon.png" /> -->
     </f:facet>
 
-    <title><ui:insert name="title" /> - HP Brazil Proactive Planning Platform</title>
+    <title>HP CLEVER PLAN - HP Brazil Proactive Planning Platform</title>
     <h:outputStylesheet name="Resources/css/style.css" />
-    <h:outputStylesheet name="Resources/css/responsive.css" />
     <h:outputStylesheet name="Resources/css/bootstrap.min.css" />
     <h:outputStylesheet name="Resources/css/bootstrap-theme.min.css" />
 	<link type="text/css" rel="stylesheet"  href="Resources/css/style.css" />
-	<link type="text/css" rel="stylesheet"  href="Resources/css/responsive.css" />
 	<link type="text/css" rel="stylesheet"  href="Resources/css/bootstrap.min.css" />
 	<link type="text/css" rel="stylesheet"  href="Resources/css/bootstrap-theme.min.css" />
     <h:outputScript library="js" name="bootstrap.min.js" />
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <ui:insert name="head" />
+		<script type="text/javascript">
+			alert("Hello");
+			$(document).ready(function(){
+				alert("hello");
+				$('img.svg').each(function(){
+		            var $img = $(this);
+		            var imgID = $img.attr('id');
+		            var imgClass = $img.attr('class');
+		            var imgURL = $img.attr('src');
+
+		            $.get(imgURL, function(data) {
+		                // Get the SVG tag, ignore the rest
+		                var $svg = $(data).find('svg');
+
+		                // Add replaced image's ID to the new SVG
+		                if(typeof imgID !== 'undefined') {
+		                    $svg = $svg.attr('id', imgID);
+		                }
+		                // Add replaced image's classes to the new SVG
+		                if(typeof imgClass !== 'undefined') {
+		                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+		                }
+
+		                // Remove any invalid XML tags as per http://validator.w3.org
+		                $svg = $svg.removeAttr('xmlns:a');
+
+		                // Replace image with new SVG
+		                $img.replaceWith($svg);
+
+		            }, 'xml');
+
+		        });
+				
+				svg:hover path {
+				    fill: red;
+				}
+				
+			});
+		</script>
 		<script type="text/javascript">
 		
 		function liveDateTime() {
@@ -226,7 +263,7 @@
 		        <div class="col-md-4 hidden-sm hidden-xs col-sm-12 hpblue headerHeight centerAlign">
 		          <ui:insert name="header_left" />
 		        </div>
-		        <div class="col-md-4 hidden-xs col-sm-8 hpblue headerHeight centerAlign">
+		        <div class="col-md-4 col-sm-8 hpblue headerHeight centerAlign">
 		        	 <ui:insert name="header_center" /> 
 		        </div>
 		        <div class="col-md-4 col-sm-4 headerHeight centerAlign">
@@ -237,19 +274,11 @@
 
 	</div> 
 	<div class="row">
-	<!-- Sidebar Area Start -->
-		<div class="col-md-4" > <!-- Padding-left & right 15px -->
-			 <ui:insert name="left_sidebar" />
-		</div>
-		<!-- Sidebar Area End -->
-		
-		
-		<!-- Main Content Start -->
-		<div class="col-md-8">
+	
+		<div class="col-md-12">
 			<ui:insert name="main_content" />
 		</div>
-		<!-- Main Content End -->
-
+		
 	
 	</div>
 	<!-- Container End -->

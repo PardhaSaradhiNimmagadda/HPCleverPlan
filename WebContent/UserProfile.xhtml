@@ -1,0 +1,270 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="AdminTemplate.xhtml">
+
+    <ui:define name="head">
+       <style>
+    .ui-widget-header {
+	     background: none repeat scroll 0 0 #0096D6 !important;
+	     color: #fff;
+    }
+    
+    
+    .ui-panelgrid {
+        margin-top: 30%;
+    }
+    .footer  {
+       margin-top: 10%;
+    }
+    .ui-panelgrid .ui-panelgrid-cell{
+       padding: 9px 93px;
+    }
+    .col-md-4 {
+			margin-right: -39px;
+			margin-left: 9px;
+    }
+    .Text1 {
+		 background: #0096D6 !important; 
+		 color: #fff !important; 
+		 margin: 66px 14px 6px 13px !important; 
+		    height: 67px !important; 
+		 line-height: 49px !important; 
+		 font-size: 17px !important; 
+		 font-family: HPBold !important;
+		 text-align: center !important;
+	}
+	.Text2 {
+		 background: #0096D6 !important; 
+		 color: #fff !important;
+		 margin-right: 15px !important;
+		 margin-top :65px;
+		 height: 67px !important; 
+		 line-height: 49px !important; 
+		 font-size: 17px !important; 
+		 font-family: HPBold !important;
+		 text-align: center !important;
+		 margin-left: 17px !important;
+	}
+	</style>
+    </ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">PRODUCT AVAILABILITY &amp; ALTERNATIVES</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="float: right; font-size: 12px; margin-right: 15px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>
+    
+    
+    <ui:define name="main_content">
+    <h:form>
+         <div class="row">
+         <div class="col-md-4">
+	         
+         		
+	<div class="Text1">
+ 		USER INFORMATION
+    </div>
+	    <div class="row" style="margin-top: 10px; padding: 15px;">
+	     		        
+	     		        <div class="col-md-6">
+		         
+					<p:inputText  style="padding: 9px; width: 100%;background-color: #e9edf5" id="firstname" value="#{userView.firstname}" required="true"  label="em" 
+					       requiredMessage="Enter First Name" validatorMessage="Invalid  First Name"  placeholder="FIRST NAME" >
+										        
+							<f:validateLength minimum="1" maximum="16"/>
+									         
+					 </p:inputText>
+											    	
+			</div>
+			<div class="col-md-6">							    	
+							    	
+	           <p:inputText  style="padding: 9px; width: 100%;background-color: #e9edf5" id="lastname" value="#{userView.lastname}" required="true"  label="em" requiredMessage="Enter Last Name"
+			        validatorMessage="Invalid Last Name" placeholder="LAST NAME" >
+		          <f:validateLength  maximum="16"/>
+		      </p:inputText>
+			           
+			           
+			</div>
+			<div class="col-md-6">
+				<p:inputText style="padding: 9px ;width: 100%;background-color: #d1dded" id="emailid2" value="#{userView.hp_email}" required="true"  label="em2" requiredMessage="Enter Hp Email"
+					   validatorMessage="Invalid HP EmailId"     placeholder="HP EMAIL" >
+				         
+				        <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*(hp)\.(com)"/>
+							 
+	            </p:inputText>					 				         
+						 
+				
+			</div>
+			<div class="col-md-6">
+				  <p:inputText style="padding: 9px;width: 100%;background-color: #d1dded" id="desig" value="#{userView.designation}" required="true"  label="em2" requiredMessage="Enter Designation"
+				        validatorMessage="Invalid Designation" placeholder="DESIGNATION" >
+			             <f:validateLength  maximum="16"/>
+			       </p:inputText>   	
+			</div>
+			<div class="col-md-6">
+				<p:inputText style="padding: 9px;width: 100%;background-color: #e9edf5" id="managername" value="#{userView.managers_name}" required="true"  label="em2" requiredMessage="Enter Manager's Name"
+				        validatorMessage="Invalid Manager's Name" placeholder="MANAGER'S NAME" >
+					         
+					         
+				 </p:inputText>	    	  
+			</div>
+			<div class="col-md-6">	    	
+				   <p:inputText style="padding: 9px;width: 100%;background-color: #e9edf5" id="manager"  value="#{userView.managers_hp_email}" required="true"  label="em3" requiredMessage="Enter Manager's HP Email"
+			            validatorMessage="Invalid Manager's Email" placeholder="MANAGER'S HP EMAIL" >
+		               <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*(hp)\.(com)"/>
+		           </p:inputText>
+			</div>
+	     		        
+	    </div>
+	     		
+				 </div>
+		        	<div class="col-md-4">
+		         		<div class="Text2">
+		         		SYSTEM INFORMATION
+		         		</div>
+		        <div class="row" style="margin-top: 10px; padding: 15px;">
+				         	<div class="col-md-4">
+				         	 
+				         	    <p:outputLabel value="AVAILABILITY" />
+		                    </div>
+		       
+				         	<div class="col-md-4">
+				           		  <p:selectOneRadio id="access" value="">
+				                      <f:selectItem style="float: left; margin-right: 10px;" itemLabel="Yes" itemValue="Yes" />
+		                              <f:selectItem style="float: right" itemLabel="No" itemValue="No" />
+		                          </p:selectOneRadio>
+				           </div>
+					          			
+				          <div class="col-md-4">
+				         
+				                  <p:commandButton styleClass="go_button" value="REQUEST ACCESS" ajax="false" validateClient="false"/>
+				        
+		          </div>
+		       </div>
+		          
+		                
+		      <div class="row" style="margin-top: 10px; padding: 15px;">
+				         	<div class="col-md-4">
+				         				<p:outputLabel value="AVAILABILITY" />
+			       		    </div>
+			      
+				         	<div class="col-md-4">
+				           		  <p:selectOneRadio id="access1" value="">
+				                      <f:selectItem itemLabel="Yes" itemValue="Yes" />
+			                          <f:selectItem itemLabel="No" itemValue="No" />
+			
+			                      </p:selectOneRadio>
+				           </div>
+				          			
+				          <div class="col-md-4">
+				                 <p:commandButton styleClass="go_button" value="REQUEST ACCESS" ajax="false" validateClient="false"/>
+				           </div>
+		             </div>
+		             <div class="row" style="margin-top: 10px; padding: 15px;">
+					         	<div class="col-md-4">
+					         				<p:outputLabel value="AVAILABILITY" />
+			                    </div>
+			       
+					         	<div class="col-md-4">
+					           		  <p:selectOneRadio id="access2" value="">
+					                      <f:selectItem itemLabel="Yes" itemValue="Yes" />
+			                              <f:selectItem itemLabel="No" itemValue="No" />
+			
+			                          </p:selectOneRadio>
+					           </div>
+					          			
+					          <div class="col-md-4">
+					                 <p:commandButton styleClass="go_button" value="REQUEST ACCESS" ajax="false" validateClient="false"/>
+					          </div>
+		           </div>
+		          
+	</div>
+				 <div class="col-md-4">
+		         		<div class="Text1">
+		         		PASSWORD CHANGE
+		         		</div>
+		         		<div class="row" style="margin-top: 10px; padding: 15px;">
+		         		<div class="col-md-6">
+			         				<p:outputLabel value="ENTER PRESENT PASSWORD" />
+		       		    </div>
+		       		    <div class="col-md-6">
+			         		<p:inputText id="text"  placeholder="TEXT NOT VISIBLE &#42;&#42;&#42; FORM" />
+		       		    </div>
+		       		    
+		         		</div>
+		         		<div class="row" style="margin-top: 10px; padding: 15px;">
+		         		<div class="col-md-6">
+			         				<p:outputLabel value="ENTER PRESENT PASSWORD" />
+		       		    </div>
+		       		    <div class="col-md-6">
+			         		<p:inputText style="" id="text1"  placeholder="TEXT NOT VISIBLE &#42;&#42;&#42; FORM" />
+		       		    </div>
+		       		    
+		         		</div>
+		         		<div class="row" style="margin-top: 10px; padding: 15px;">
+		         		<div class="col-md-6">
+			         				<p:outputLabel value="ENTER PRESENT PASSWORD" />
+		       		    </div>
+		       		    <div class="col-md-6">
+			         		<p:inputText id="text2"  placeholder="TEXT NOT VISIBLE &#42;&#42;&#42; FORM" />
+		       		    </div>
+		       		    
+		         		</div>
+		         		<div class="row" style="margin-top: 10px; padding: 15px;">
+		         		<div class="col-md-12">
+		         		<p:commandButton styleClass="go_button" value="Go" ajax="false" validateClient="false"/>
+		         		</div>
+		         		</div>
+		         		
+		 </div>
+				         		
+	</div>		    	          
+		          
+		         
+		          <div class="row" style="margin-top: 10px; padding: 15px;">
+		         		<div class="col-md-12">
+		         		<p:commandButton styleClass="go_button" value="SEND MESSAGE TO ADMIN" ajax="false" validateClient="false"/>
+		         		</div>
+		         		</div>
+		               	          			     
+				  		
+				 
+         
+	    
+	    
+
+			</h:form>
+			<!-- Login Details -->
+
+	        	<!--  Login End -->
+		
+		
+    </ui:define>
+    
+    <ui:define name="footer">
+        <div class="Copyright_information_HP_inc_text"> </div>
+       
+    </ui:define>
+</ui:composition>

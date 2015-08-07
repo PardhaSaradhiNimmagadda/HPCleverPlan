@@ -28,7 +28,7 @@
 	<link type="text/css" rel="stylesheet"  href="Resources/css/bootstrap.min.css" />
 	<link type="text/css" rel="stylesheet"  href="Resources/css/bootstrap-theme.min.css" />
     <h:outputScript library="js" name="bootstrap.min.js" />
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    
     <ui:insert name="head" />
 		<script type="text/javascript">
 		
@@ -229,7 +229,7 @@
 		        <div class="col-md-4 hidden-xs col-sm-8 hpblue headerHeight centerAlign">
 		        	 <ui:insert name="header_center" /> 
 		        </div>
-		        <div class="col-md-4 col-sm-4 headerHeight centerAlign">
+		        <div class="col-md-4 col-sm-4 headerHeight">
 		        	 <ui:insert name="header_right" />
 		        </div>
 		    </div>
@@ -238,14 +238,14 @@
 	</div> 
 	<div class="row">
 	<!-- Sidebar Area Start -->
-		<div class="col-md-4" > <!-- Padding-left & right 15px -->
+		<div class="col-md-2" > <!-- Padding-left & right 15px -->
 			 <ui:insert name="left_sidebar" />
 		</div>
 		<!-- Sidebar Area End -->
 		
 		
 		<!-- Main Content Start -->
-		<div class="col-md-8">
+		<div class="col-md-10">
 			<ui:insert name="main_content" />
 		</div>
 		<!-- Main Content End -->

@@ -1,0 +1,105 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="templatewithoutsidebar.xhtml">
+	<ui:define name="title">Review Cart</ui:define>
+    <ui:define name="head">
+    <style>
+    .ui-widget-header {
+	     background: none repeat scroll 0 0 #0096D6 !important;
+	     color: #fff;
+    }
+    .ui-datatable .ui-datatable-header {
+     	margin-bottom:5px !important;
+    
+    }
+    .ui-datatable-even{
+     	background-color: #e9edf5 !important;
+    }
+    .ui-datatable-odd{
+    	background-color: #d1dded;
+    }
+    
+    .ui-datatable .ui-datatable-header {
+     	margin-top: 10%;
+    }
+    .footer {
+     	margin-top:9%;
+    }
+    
+    .ui-datatable-header, .ui-widget-header, .ui-corner-top{
+      	margin-top: 10px !important;
+    }
+	</style>
+    </ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">PRODUCT AVAILABILITY &amp; ALTERNATIVES</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="float: right; font-size: 12px; margin-right: 15px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>
+
+    <ui:define name="main_content">
+        <div class="row">
+         	<div class="col-md-1"></div>
+         	
+			<div class="col-md-8 col-sm-12" style="padding-top: 100px;">
+			<h:form id="form">
+    
+			 <p:dataTable  id="carts" var="cart" value="#{cartBean.carts}" rowKey="#{cart.id}"
+			                 selection="#{cartBean.selectedCart}" selectionMode="single" >
+			       <f:facet name="header">
+			        <p class="font-size">Review Cart</p>
+			        </f:facet>
+			        <p:column headerText="Product Family" style="width: 30%;">
+			            <h:outputText style="color:#000;" value="#{cart.product_family}" />
+			        </p:column>
+			        <p:column headerText="Quantity Added" style="width: 20%; text-align:center;">
+			            <h:outputText style="color:#000;" value="#{cart.quantity_added}" />
+			        </p:column>
+			        <p:column headerText="Cart Add Date and Time" style="width: 26%; text-align:center;">
+			            <h:outputText style="color:#000;" value="#{cart.cart_add_date_and_time}" />
+			        </p:column>
+			        <p:column headerText="Confirm Order to Supply Chain"  style="text-align:center;">
+			            <h:outputText style="color:#000;" value="#{cart.confirm_order_to_supply_chain}" />
+			            </p:column>
+			        <p:column headerText="Cancel" style="width: 8.5%; text-align:center;">
+			            	<p:commandButton styleClass="Cancel" value="Cancel" id="Cancel" actionListener="#{buttonView.buttonAction}" ajax="false" />
+			        </p:column>
+			        
+			 </p:dataTable>	    
+	    
+			</h:form>
+			
+
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</ui:define>
+    
+  <ui:define name="footer">
+        		<div class="Copyright_information_HP_inc_text"> <span style="color:#7B7B80;">About Proactive Planning platform &#160;&#160;&#160;&#160;&#160;</span> <span style="color:#7B7B80;">Help And Faq&#160;&#160;&#160;&#160;&#160;</span>
+       				  &lt;Copyright information&gt;&#160;&#160;&#160;&#160;&#160; ProductAvailability And Alternatives&#160;&#160;&#160;&#160;&#160; GO TO Inventory OPtimization&#160;&#160;&#160;&#160;&#160; MRP simulation&#160;&#160;&#160;&#160;&#160; <span style="color:#7B7B80;">HP inc </span></div>
+       		 </ui:define> 
+</ui:composition>

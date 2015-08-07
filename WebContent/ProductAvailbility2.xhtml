@@ -31,7 +31,11 @@
 		.ui-datatable-footer {
    	 		margin-top: 10px !important;
    		 }
-   		 		 
+   		 
+   		 .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield{
+   		 margin-right: -18% !important;
+   		 }
+   		 
    		 .ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
    		  text-align: center;
    		 }
@@ -49,7 +53,11 @@
 		    background-image: url("Resources/images/ui-icons_38667f_256x240_white.png") !important;
 		}
 		
-		
+		.ui-inputfield{
+		    margin-right: 12% !important;
+		    height:32.8px;
+		    width:22%;
+		}
 		
 		.ui-spinner-input {
 			width: 100%;
@@ -62,14 +70,7 @@
 		.ui-spinner {
 			width: 100%;
 		}
-		.ui-widget-header {
-		 	margin-right: 4px !important;
-		}
-   		
-   		.inputMargin {
-   			margin-right: 15px;
-   			margin-top: 1px;
-   		}
+   		 
 	</style>
 	
 	</ui:define>
@@ -120,7 +121,7 @@
             <f:selectItem itemLabel="Thriller" itemValue="Thriller" />
             <f:selectItem itemLabel="Tootsie 745 G2" itemValue="Tootsie 745 G2" />
         </p:selectOneMenu>
-	   <p:spinner type="number" placeholder="Units Needed" id="basic" min="0" max="10000" cellpadding="5"/>
+	   <p:spinner placeholder="Units Needed" id="basic" min="0" max="10000" cellpadding="5"/>
 	   
        </div>
       
@@ -128,7 +129,7 @@
     
     <ui:define name="main_content">
         <div class="row">
-			<div class="col-md-9 col-sm-9 main-content2">
+			<div class="col-md-8 col-sm-8 main-content2">
 			<br/><br/>
 			<span class="para_txt"> Availability for User Selected Configuration</span>
 				<!-- Login Details -->
@@ -155,58 +156,35 @@
 			        Configuration Details
 			        </f:facet>
 			         
-			           <p:column headerText="Key Feature" style="width: 14%">
+			           <p:column headerText="Key Feature" style="width: 20%">
 			            <h:outputText value="#{user.component}" />
 			        </p:column>
-			         <p:column headerText="Configuration" style="width: 30%;">
+			         <p:column headerText="Configuration" style="width: 22%">
 			         
 			           
-			            <p:selectOneMenu id="config" value="#{itemBean.item}" style="width: 95%">
+			            <p:selectOneMenu id="config" value="#{itemBean.item}" style="width: 95%;">
 			                <f:selectItem itemLabel="Selected Configuration" itemValue="" noSelectionOption="true" />
 			                <f:selectItems value="#{itemBean.items}" />
 			            </p:selectOneMenu>
 			            </p:column> 
-			            
-			         
-			           <p:column headerText="Part Details" style="width: 30%">
-			         
-			           
-			            <p:selectOneMenu id="config1" value="#{itemBean.item}" style="width: 95%">
-			                <f:selectItem itemLabel="Selected Configuration" itemValue="" noSelectionOption="true" />
-			                <f:selectItems value="#{itemBean.items}" />
-			            </p:selectOneMenu>
-			            </p:column> 
-			            
-			          
-			         <p:column headerText="Description" style="width: 23%">
+			         <p:column headerText="Description" style="width: 32%">
 			            <h:outputText value="#{user.description}" />
 			        </p:column> 
 			       
-			        
-			        <p:column headerText="Availability" style="width: 16%">
+			         <p:column headerText="Availability" style="width: 13%">
 			            <h:outputText value="#{user.available}" />
 			           
 			        </p:column>
 			        
-			          <p:column headerText="Lead Time in Weeks" style="width: 18%">
+			          <p:column headerText="Lead Time in Weeks" style="width: 13%">
 			            <h:outputText value="#{user.weeks}" />
 			        </p:column> 
-			          <p:column headerText="Price" style="width: 12%">
-			            <h:outputText value="#{user.price}" />
-			        </p:column> 
-			        <p:column headerText="Comments" style="width: 16%">
-			            <h:outputText value="#{user.comments}" />
-			        </p:column> 
+			        
 			         
-			         <f:facet name="footer">
-			         	<p:commandButton styleClass="go_button pull-right" value="ADD TO CART " />
-			            
-			            <p:inputText  styleClass="inputMargin pull-right" id="qb"  placeholder="Quantity to block" />
-			            
-			            <p:inputText styleClass="inputMargin pull-right" style="width: 300px;" id="qb1"  placeholder="SKU Matched Suggestion" />
-						
+			         <f:facet name="footer"  >
+						<p:inputText id="qb" style="text-align:center; margin-left: 194px;" placeholder="Quantity to block" />
 							 
-			            
+			            <p:commandButton styleClass="go_button" style="float:right;"  value="ADD TO CART " />
 			         </f:facet>
 			        
 			  </p:dataTable>
@@ -214,16 +192,16 @@
 			</h:form>
 	        	<!--  Login End -->
 			</div>
-			<div class="col-md-3 col-sm-3 pull-right">
-	 		<h:form>
+			<div class="col-md-4 col-sm-4 pull-right">
+		 <h:form>
                  <div class="padding  pull-right padding-right">
-	                <h:graphicImage class="image pull-right" value="Resources/images/shoping.png"/><br/><br/><br/><br/>
-		      		<p:commandButton styleClass="centermargin go_button"  value="Review cart" ajax="false" validateClient="true"/><br/>  
-		       		<p:commandButton styleClass="centermargin go_button"  value="Empty cart" ajax="false" validateClient="true" /><br/>
-		        	<p:commandButton styleClass="centermargin go_button"  value="Confirm order" ajax="false" validateClient="true" /><br/>
-		         	<p:commandButton styleClass="centermargin go_button"  value="Availibility reports" ajax="false" validateClient="true" />
-       			</div>
-       		</h:form>
+                 <h:graphicImage class="image pull-right" value="Resources/images/shoping.png"/><br/><br/><br/><br/>
+	      <p:commandButton styleClass="centermargin go_button"  value="Review cart" ajax="false" validateClient="true"/><br/>  
+	       <p:commandButton styleClass="centermargin go_button"  value="Empty cart" ajax="false" validateClient="true" /><br/>
+	        <p:commandButton styleClass="centermargin go_button"  value="Confirm order" ajax="false" validateClient="true" /><br/>
+	         <p:commandButton styleClass="centermargin go_button"  value="Availibility reports" ajax="false" validateClient="true" />
+       </div>
+       </h:form>
     
 			</div>
 			

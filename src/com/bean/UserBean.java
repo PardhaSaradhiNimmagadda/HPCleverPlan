@@ -38,6 +38,7 @@ public class UserBean implements Serializable{
     	views1=service.configurationDetails(18);
     	
     	
+    	
     }
 
 

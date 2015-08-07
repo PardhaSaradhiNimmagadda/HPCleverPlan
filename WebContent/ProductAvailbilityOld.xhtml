@@ -1,0 +1,253 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="tempProductAvail.xhtml">
+
+    <ui:define name="head">
+     <style>
+	 	.ui-datatable thead th{
+			background-color:#0096D6 ;
+		}
+		
+		.ui-datatable .ui-datatable-header{
+			background-color:#FFF;
+		}
+		
+	 	.ui-datatable tfoot td {
+			padding-right: 10cm;
+		}
+	
+     	.ui-widget-header {
+			background: none !important
+		}
+	
+
+		.ui-datatable .ui-datatable-header, .ui-datatable .ui-datatable-footer {
+			border:0px;
+		}
+	
+		.ui-datatable-footer {
+   	 		margin-top: 10px !important;
+   		 }
+   		 
+   		 .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield{
+   		 	margin-right: -18% !important;
+   		 }
+   		 
+   		 .ui-datatable thead th {
+   		  	text-align: center;
+   		  	font-size: 12px !important;
+			line-height: 16px !important;
+			font-family: HPLight !important;
+   		 }
+   		 
+   		 .ui-datatable tbody td, .ui-datatable tfoot td {
+   		 	text-align: center;
+   		 }
+   		 
+   		 .paddingtop {
+   		 	margin: 0px 10px 0px 10px !important;
+   		 	padding: 40% 0px 0px 0px !important
+   		 }
+   		 
+   		 .buttonsize {
+   		 	font-size: 12px !important;
+   		 	font-family: HPLight !important;
+   		 	width: 100%;
+   		 }
+	</style>
+	
+	</ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">PRODUCT AVAILABILITY &amp; ALTERNATIVES</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>
+    
+    
+    <ui:define name="left_sidebar">
+       <h:form>
+       <div class="paddingtop">
+	      <p:inputText  id="spf"  styleClass="inputbox"   placeholder="Select Product Family"/>
+	       <p:inputText id="un" styleClass="inputbox"  placeholder="Units Needed" />
+       </div>
+       </h:form>
+    </ui:define>
+    
+    <ui:define name="main_content">
+        <div class="row">
+			<div class="col-md-4 col-sm-12 col-xs-12 main-content2">
+				<br/><br/>
+				<div class="para_txt"> Availability for User Selected Configuration</div>
+				
+				<h:form id="form">
+				          
+				   <p:dataTable id="views" var="user" value="#{userBean.views}" rowKey="#{view.id}"
+				                 selection="#{userBean.selectedView}" selectionMode="single">
+				           
+				         
+				        <p:column headerText="Selected Configuration">
+				            <h:outputText value="#{user.selected_configuration}" />
+				        </p:column>
+				        <p:column headerText="Availiable to Promise">
+				            <h:outputText value="#{user.avaliable_to_promise}" />
+				        </p:column> 
+				        <p:column headerText="Total Weeks in Order Completion">
+				            <h:outputText value="#{user.total_weeks_in_order_completion}" />
+				        </p:column> 
+				        
+				   </p:dataTable>
+				   <p:dataTable id="views1" var="user" value="#{userBean.views1}" rowKey="#{view.id}"
+				                 selection="#{userBean.selectedView1}" selectionMode="single">
+				        <f:facet name="header" >
+				        Configuration Details
+				        </f:facet>
+				         
+				        <p:column headerText="Key Feature" style="width: 25%">
+				            <h:outputText value="#{user.component}" />
+				        </p:column>
+				         <p:column headerText="Configuration" style="width: 35%">
+				            <h:outputText value="#{user.selections}" />
+				        </p:column> 
+				         <p:column headerText="Availability" style="width: 20%">
+				            <h:outputText value="#{user.available}" />
+				        </p:column> 
+				          <p:column headerText="Weeks" style="width: 20%">
+				            <h:outputText value="#{user.weeks}" />
+				        </p:column> 
+				         
+				         <f:facet name="footer"  >
+							<p:inputText id="qb" style="text-align:center; margin-left:25%; text-align: left; padding-left: 5px; height:33px; font-size: 12px;" placeholder="Quantity to block" />
+								 
+				            <p:commandButton styleClass="go_button" style="float:right;"  value="ADD TO CART " />
+				         </f:facet>
+				        
+				  </p:dataTable>
+				    
+				</h:form>
+	        	
+			</div>
+			
+								<!-- <div class="col-md-12">
+									<h:graphicImage class="image pull-right" value="Resources/images/shoping.png"/>
+								</div> -->
+			
+			<div class="col-md-8 col-sm-12 col-xs-12 main-content2">
+				<br/><br/>
+				<div style="height: 99.7px; padding-top: 30px;">
+					<div style="height: 99.7px">
+						<div class="col-md-12 col-sm-12 pull-right">
+							 <h:form>
+								<div class="col-md-3">
+									<p:commandButton styleClass="go_button buttonsize"  value="Review Cart" ajax="false" validateClient="true"/>
+								</div>
+								<div class="col-md-3"> 
+									<p:commandButton styleClass="go_button buttonsize"  value="Empty Cart" ajax="false" validateClient="true" />
+								</div>
+								<div class="col-md-3">
+									<p:commandButton styleClass="go_button buttonsize"  value="Confirm Order" ajax="false" validateClient="true" />
+								</div>
+								<div class="col-md-3">
+									<p:commandButton styleClass="go_button buttonsize"  value="Availability Reports" ajax="false" validateClient="true" />
+								</div>
+					       </h:form>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<h:form>
+				          
+						   <p:dataTable var="user" value="#{userBean.views1}" rowKey="#{view.id}"
+						                 selection="#{userBean.selectedView1}" selectionMode="single">
+						        <f:facet name="header" >
+						        Configuration Details
+						        </f:facet>
+						         
+						        <p:column headerText="Key Feature" style="width: 25%">
+						            <h:outputText value="#{user.component}" />
+						        </p:column>
+						         <p:column headerText="Configuration" style="width: 35%">
+						            <h:outputText value="#{user.selections}" />
+						        </p:column> 
+						         <p:column headerText="Availability" style="width: 20%">
+						            <h:outputText value="#{user.available}" />
+						        </p:column> 
+						          <p:column headerText="Weeks" style="width: 20%">
+						            <h:outputText value="#{user.weeks}" />
+						        </p:column> 
+						         
+						         <f:facet name="footer"  >
+									<p:inputText id="aqb" style="text-align:center; text-align: left; padding-left: 5px; margin-left:25%; font-size: 12px; height:33px;" placeholder="Quantity to block" />
+										 
+						            <p:commandButton styleClass="go_button" style="float:right;"  value="ADD TO CART " />
+						         </f:facet>
+						        
+						  </p:dataTable>
+						    
+						</h:form>
+					</div>
+					<div class="col-md-6">
+						<h:form>
+						   <p:dataTable var="user" value="#{userBean.views1}" rowKey="#{view.id}"
+						                 selection="#{userBean.selectedView1}" selectionMode="single">
+						        <f:facet name="header" >
+						        Configuration Details
+						        </f:facet>
+						         
+						        <p:column headerText="Key Feature" style="width: 25%">
+						            <h:outputText value="#{user.component}" />
+						        </p:column>
+						         <p:column headerText="Configuration" style="width: 35%">
+						            <h:outputText value="#{user.selections}" />
+						        </p:column> 
+						         <p:column headerText="Availability" style="width: 20%">
+						            <h:outputText value="#{user.available}" />
+						        </p:column> 
+						          <p:column headerText="Weeks" style="width: 20%">
+						            <h:outputText value="#{user.weeks}" />
+						        </p:column> 
+						         
+						         <f:facet name="footer"  >
+									<p:inputText id="aqb" style="text-align:center; margin-left:25%; text-align: left; padding-left: 5px; font-size: 12px; height:33px;" placeholder="Quantity to block" />
+										 
+						            <p:commandButton styleClass="go_button" style="float:right;"  value="ADD TO CART " />
+						         </f:facet>
+						        
+						  </p:dataTable>
+						    
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </ui:define>
+    
+    <ui:define name="footer">
+        <div class="Copyright_information_HP_inc_text"> About Proactive Planning platform Help And Faq 
+        &lt; Copyright information &gt; ProductAvailability And Alternatives GO TO Inventory OPtimization MRP simulation HP inc </div>
+       
+    </ui:define>
+</ui:composition>

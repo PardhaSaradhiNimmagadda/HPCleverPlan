@@ -128,7 +128,7 @@
     
     <ui:define name="main_content">
         <div class="row">
-			<div class="col-md-9 col-sm-9 main-content2">
+			<div class="col-md-10 col-sm-10 main-content2">
 			<br/><br/>
 			<span class="para_txt"> Availability for User Selected Configuration</span>
 				<!-- Login Details -->
@@ -155,10 +155,10 @@
 			        Configuration Details
 			        </f:facet>
 			         
-			           <p:column headerText="Key Feature" style="width: 14%">
+			           <p:column headerText="Key Feature" style="width: 10%">
 			            <h:outputText value="#{user.component}" />
 			        </p:column>
-			         <p:column headerText="Configuration" style="width: 30%;">
+			         <p:column headerText="Configuration" style="width: 14%;">
 			         
 			           
 			            <p:selectOneMenu id="config" value="#{itemBean.item}" style="width: 95%">
@@ -168,7 +168,7 @@
 			            </p:column> 
 			            
 			         
-			           <p:column headerText="Part Details" style="width: 30%">
+			           <p:column headerText="Part Details" style="width: 14%">
 			         
 			           
 			            <p:selectOneMenu id="config1" value="#{itemBean.item}" style="width: 95%">
@@ -178,23 +178,25 @@
 			            </p:column> 
 			            
 			          
-			         <p:column headerText="Description" style="width: 23%">
+			         <p:column headerText="Configuration Description" style="width: 15%">
 			            <h:outputText value="#{user.description}" />
 			        </p:column> 
 			       
 			        
-			        <p:column headerText="Availability" style="width: 16%">
+			        <p:column headerText="Configuration Availability" style="width: 12%">
 			            <h:outputText value="#{user.available}" />
 			           
 			        </p:column>
 			        
-			          <p:column headerText="Lead Time in Weeks" style="width: 18%">
+			          <p:column headerText="Lead Time in Weeks" style="width: 10%">
 			            <h:outputText value="#{user.weeks}" />
 			        </p:column> 
-			          <p:column headerText="Price" style="width: 12%">
+			        
+			          <p:column headerText="Configuration Price" style="width: 12%">
 			            <h:outputText value="#{user.price}" />
 			        </p:column> 
-			        <p:column headerText="Comments" style="width: 16%">
+			        
+			        <p:column headerText="Comments" style="width: 13%">
 			            <h:outputText value="#{user.comments}" />
 			        </p:column> 
 			         
@@ -204,6 +206,8 @@
 			            <p:inputText  styleClass="inputMargin pull-right" id="qb"  placeholder="Quantity to block" />
 			            
 			            <p:inputText styleClass="inputMargin pull-right" style="width: 300px;" id="qb1"  placeholder="SKU Matched Suggestion" />
+			            
+			            <span style="float: right; line-height: 32px; margin-right: 15px;">Pre Configured Configuration</span>
 						
 							 
 			            
@@ -214,7 +218,7 @@
 			</h:form>
 	        	<!--  Login End -->
 			</div>
-			<div class="col-md-3 col-sm-3 pull-right">
+			<div class="col-md-2 col-sm-2 pull-right">
 	 		<h:form>
                  <div class="padding  pull-right padding-right">
 	                <h:graphicImage class="image pull-right" value="Resources/images/shoping.png"/><br/><br/><br/><br/>

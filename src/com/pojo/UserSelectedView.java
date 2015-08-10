@@ -19,9 +19,31 @@ public class UserSelectedView implements Serializable {
 	private String description;
 	private String price;
 	private String comments;
+	private String fgi_availability;
+	private String material_availability;
 	
 	
 	
+	public String getFgi_availability() {
+		return fgi_availability;
+	}
+
+	public void setFgi_availability(String fgi_availability) {
+		this.fgi_availability = fgi_availability;
+	}
+
+	public String getMaterial_availability() {
+		return material_availability;
+	}
+
+	public void setMaterial_availability(String material_availability) {
+		this.material_availability = material_availability;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -45,10 +67,12 @@ public class UserSelectedView implements Serializable {
 		this.comments=comments;
 	}
 
-	public UserSelectedView(int id, String selected_configuration,
+	public UserSelectedView(int id, String selected_configuration,String fgi_availability,String material_availability,
 			String avaliable_to_promise, String total_weeks_in_order_completion) {
 		this.id = id;
 		this.selected_configuration = selected_configuration;
+		this.fgi_availability=fgi_availability;
+		this.material_availability=material_availability;
 		this.avaliable_to_promise = avaliable_to_promise;
 		this.total_weeks_in_order_completion = total_weeks_in_order_completion;
 	}

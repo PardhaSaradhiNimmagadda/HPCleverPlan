@@ -82,9 +82,9 @@
 			            <h:outputText style="color:#000;" value="#{cart.cart_add_date_and_time}" />
 			        </p:column>
 			        <p:column headerText="Confirm Order to Supply Chain"  style="text-align:center;">
-			            <p:commandButton styleClass="Cancel" value="Submit" id="Submit" actionListener="#{buttonView.buttonAction}" ajax="false" />
+			            <h:outputText style="color:#000;" value="#{cart.confirm_order_to_supply_chain}" />
 			            </p:column>
-			        <p:column headerText="Cancel" style="width: 9.5%; text-align:center;">
+			        <p:column headerText="Cancel" style="width: 8.5%; text-align:center;">
 			            	<p:commandButton styleClass="Cancel" value="Cancel" id="Cancel" actionListener="#{buttonView.buttonAction}" ajax="false" />
 			        </p:column>
 			        
@@ -95,10 +95,8 @@
 
 			</div>
 			<div class="col-md-3"></div>
-			</div>
-	
-	
-    </ui:define>
+		</div>
+	</ui:define>
     
   <ui:define name="footer">
         		<div class="Copyright_information_HP_inc_text"> <span style="color:#7B7B80;">About Proactive Planning platform &#160;&#160;&#160;&#160;&#160;</span> <span style="color:#7B7B80;">Help And Faq&#160;&#160;&#160;&#160;&#160;</span>

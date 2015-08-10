@@ -505,5 +505,134 @@ body {
 	 min-height: 60px;
 }
 
+.controlheader{
+	border: 2px solid rgb(0, 150, 214);;
+	margin-top: 1% !important;
+	text-align: center;
+	font-size: 32px;
+	color: rgb(0, 150, 214);
+}
+
+.controlsub{
+	text-align: center;
+	border: 1px solid #0096D6;
+	background: #0096D6;
+	color: #fff;
+	font-size: 15px;
+	margin-bottom: 0.4%;
+	width: 96%;
+	margin-left: 2%;
+} 
+
+.dtc{
+	font-size: 9px !important;
+	font-family: HPlight;
+	text-align: center;
+	color:#fff !important;
+}
+
+.dt{
+	font-size: 13px !important;
+	font-family: HPlight;
+	text-align: center;
+	color:#fff !important;
+}
+
+#dtv{
+	background: #0096D6;
+}
 
 /* Swapna CSS END */
+
+
+
+
+/* sadhana css */
+
+.table1 {
+	border: 2px solid #0096D6 !important;
+	text-align: left !important;
+	min-height: 2px;
+	padding: 2%;
+	margin-left: 9%;
+    margin-right: 6%;
+   
+	
+}
+.HeaderText {
+	background: #0096D6; 
+	color: #fff; 
+	margin: 79px 22px 13px 29px !important; 
+    height: 67px; 
+	line-height: 49px; 
+	font-size: 17px; 
+	font-family: HPBold;
+	text-align: center;
+}
+
+.Text1 {
+	background: #0096D6 !important; 
+	color: #fff !important; 
+	margin: 66px 14px 6px 13px !important; 
+    height: 67px !important; 
+	line-height: 49px !important; 
+	font-size: 17px !important; 
+	font-family: HPBold !important;
+	text-align: center !important;
+	padding-top: 10px !important;
+	
+}
+.Text2 {
+	background: #0096D6 !important; 
+	color: #fff !important;
+	margin-top :65px;
+	height: 67px !important; 
+	line-height: 49px !important; 
+	font-size: 17px !important; 
+	font-family: HPBold !important;
+	text-align: center !important;
+	margin-left: -8px !important;
+    margin-right: 58px;
+	margin-bottom: 22px !important;
+	padding-top: 10px !important;
+}
+
+.label {
+	margin-bottom: 1px;
+	margin-right: 9px;
+}
+
+.Text {
+	background: #0096D6 !important; 
+	color: #fff !important; 
+	margin: 64px 82px 19px -30px !important; 
+    height: 67px !important; 
+	line-height: 49px !important; 
+	font-size: 17px !important; 
+	font-family: HPBold !important;
+	text-align: center !important;
+	margin-bottom: 17px;
+	padding-top: 10px !important;
+}
+
+.Go{
+	background: #0096D6 !important;
+	box-shadow: none !important;
+	color: #fff !important;
+	font-family: 'HPRegular';
+	float:right;
+	margin-right: -32px;
+	margin-top: -45px
+}
+
+.Message_button{
+	background: #0096D6 !important;
+	box-shadow: none !important;
+	color: #fff !important;
+	font-family: 'HPRegular';
+	padding: 16px 112px;
+    margin-top: -34px;
+}
+
+
+/* sadhana CSS END */

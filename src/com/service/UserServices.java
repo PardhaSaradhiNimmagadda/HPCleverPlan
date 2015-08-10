@@ -27,6 +27,8 @@ public class UserServices implements Serializable{
 	private final static String[] description;
 	private final static String[] price;
 	private final static String[] comments;
+	private final static String[] fgi_availability;
+	private final static String[] material_availability;
 	
 	static{
 		selected_configuration=new String[1];
@@ -37,6 +39,12 @@ public class UserServices implements Serializable{
 		
 		total_weeks_in_order_completion=new String[1];
 		total_weeks_in_order_completion[0]="YY";
+		
+		fgi_availability=new String[1];
+		fgi_availability[0]="XXX";
+		
+		material_availability=new String[1];
+		material_availability[0]="YYY";
 		
 		component=new String[11];
 		component[0]="HDD";
@@ -116,7 +124,7 @@ public class UserServices implements Serializable{
 	public List<UserSelectedView> selectedConfiguration(int size){
     	List<UserSelectedView> list=new ArrayList<UserSelectedView>();
     	for(int i=0;i<size;i++){
-    	list.add(new UserSelectedView(i++,getselected_configuration(),getavaliable_to_promise(),
+    	list.add(new UserSelectedView(i++,getselected_configuration(),getfgi_availability(),getmaterial_availability(),getavaliable_to_promise(),
     			gettotal_weeks_in_order_completion()));
     	}
     	return list;
@@ -163,7 +171,7 @@ public class UserServices implements Serializable{
     } 
 	private void populateRandomSelectedConfiguration(List<UserSelectedView> list, int size) {  
         for(int i = 0 ; i < size ; i++)  
-            list.add(new UserSelectedView(i++,getselected_configuration(),getavaliable_to_promise(),
+            list.add(new UserSelectedView(i++,getselected_configuration(),getfgi_availability(),getmaterial_availability(),getavaliable_to_promise(),
             		gettotal_weeks_in_order_completion()));  
     } 
 	private String getselected_configuration(){
@@ -202,6 +210,12 @@ public class UserServices implements Serializable{
 	}
 	private String getcomments(){
 		return comments[(int) (Math.random()*7)];
+	}
+	private String getfgi_availability(){
+		return fgi_availability[(int) (Math.random()*1)];
+	}
+	private String getmaterial_availability(){
+		return material_availability[(int) (Math.random()*1)];
 	}
 	
 }

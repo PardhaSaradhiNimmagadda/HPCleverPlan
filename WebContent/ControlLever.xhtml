@@ -1,0 +1,202 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="templateLess.xhtml">
+	<ui:define name="title">Control Lever</ui:define>
+    <ui:define name="head">
+   <style>
+   	.controlsub{
+		text-align: center;
+		border: 1px solid #0096D6;
+		background: #0096D6;
+		color: #fff;
+		font-size: 15px;
+		margin-bottom: 0.4%;
+		width:100%;
+		margin-left: 4px;
+	} 
+	
+	.dtc{
+		font-size: 9px !important;
+		font-family: HPlight;
+		text-align: center;
+		color:#fff !important;
+	}
+	
+	.dt{
+		font-size: 13px !important;
+		font-family: HPlight;
+		text-align: center;
+		color:#fff !important;
+	}
+	
+	/* New CSS */
+	
+	
+		
+   </style>
+     
+	</ui:define>
+    
+     <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">Inventory Optimization</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>28-jul-2015 04:45 PM Brazil Time </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="margin-right: 2%; width: 54px; float:right; font-size: 9px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on 22-jul-2015</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	   </ui:define>  
+	   
+    
+   
+    
+    <ui:define name="main_content">
+        <div class="row">
+			<div class="col-md-8 col-sm-8 main-content2">
+			<br/><br/>
+			<div class="controlheader">CONTROL LEVERS AND PARAMETER TUNING </div>
+			<br/><br/> 
+			 <div class="controlsub">DETAILED INVENTORY REPORT</div>
+		
+				<!-- Login Details -->
+			<h:form id="form">
+			   
+			   
+	  <p:dataTable styleClass="col-md-8 col-sm-8 main-content2" var="car" value="#{dtScrollView.cars1}" scrollable="true" scrollHeight="150" style="margin-left: 4px; width:100%;" >
+         	<p:columnGroup type="header">
+            <p:row>
+                <p:column colspan="4" headerText="PART ATTRIBUTE" styleClass="dt" />
+                <p:column colspan="4" headerText="LEAD TIME FORECAST" styleClass="dt"/>
+                <p:column colspan="4" headerText="SAFETY STOCK PARAM" styleClass="dt"/>
+                <p:column colspan="4" headerText="LEAD TIME PARAM" styleClass="dt"/>
+                <p:column colspan="4" headerText="SUPPLY PARAM" styleClass="dt"/>
+            </p:row>
+            
+            <p:row>
+                <p:column rowspan="1" headerText="COMMODITY" styleClass="dtc" />
+                <p:column rowspan="1" headerText="PART NUMBER" styleClass="dtc" />
+                 <p:column rowspan="1" headerText="PART DESC" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="EOL/NPI/REG" styleClass="dtc"/>
+                 <p:column rowspan="1" headerText="FCST MAPE-ORIGI" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="FCST MAPE-CORR" styleClass="dtc"/>
+                 <p:column rowspan="1" headerText="FCST MAPE-SOL GEN" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="FCST SELECT FOR CALC" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="ABA CLASS" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="SERVICE LEVEL" styleClass="dtc"/>
+                 <p:column rowspan="1" headerText="DEMAND UPSIDE" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="SAFETY STOCK VAR ALLOWED" styleClass="dtc"/>
+                 <p:column rowspan="1" headerText="LEAD TIME IN WEEKS" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="LEAD TIME VAR MIN" styleClass="dtc"/>
+                 <p:column rowspan="1" headerText="LEAD TIME VAR MAX" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="LEAD TIME FCST" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="DELIVERY/WEEK" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="MOQ" styleClass="dtc"/>
+                 <p:column rowspan="1" headerText="SUPPLIER CAPACITY" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="SUPPLIER RELIABILITY" styleClass="dtc"/>
+            </p:row>
+ 	        </p:columnGroup>
+ 	        
+ 	        
+ 	         <!-- 1 -->
+        <p:column headerText="Id" footerText="Id">
+            <h:outputText value="#{car.id}" />
+        </p:column>
+        <p:column headerText="Year" footerText="Year">
+            <h:outputText value="#{car.year}" />
+        </p:column>
+        <p:column headerText="Brand" footerText="Brand">
+            <h:outputText value="#{car.brand}" />
+        </p:column>
+        <p:column headerText="Color" footerText="Color">
+            <h:outputText value="#{car.color}" />
+        </p:column>
+        
+        
+        <!-- 2 -->
+        <p:column headerText="Id" footerText="Id">
+            <h:outputText value="#{car.id}" />
+        </p:column>
+        <p:column headerText="Year" footerText="Year">
+            <h:outputText value="#{car.year}" />
+        </p:column>
+        <p:column headerText="Brand" footerText="Brand">
+            <h:outputText value="#{car.brand}" />
+        </p:column>
+        <p:column headerText="Color" footerText="Color">
+            <h:outputText value="#{car.color}" />
+        </p:column>
+        
+        <!-- 3 -->
+        <p:column headerText="Id" footerText="Id">
+            <h:outputText value="#{car.id}" />
+        </p:column>
+        <p:column headerText="Year" footerText="Year">
+            <h:outputText value="#{car.year}" />
+        </p:column>
+        <p:column headerText="Brand" footerText="Brand">
+            <h:outputText value="#{car.brand}" />
+        </p:column>
+        <p:column headerText="Color" footerText="Color">
+            <h:outputText value="#{car.color}" />
+        </p:column>
+        
+        <!-- 4 -->
+        <p:column headerText="Id" footerText="Id">
+            <h:outputText value="#{car.id}" />
+        </p:column>
+        <p:column headerText="Year" footerText="Year">
+            <h:outputText value="#{car.year}" />
+        </p:column>
+        <p:column headerText="Brand" footerText="Brand">
+            <h:outputText value="#{car.brand}" />
+        </p:column>
+        <p:column headerText="Color" footerText="Color">
+            <h:outputText value="#{car.color}" />
+        </p:column>
+        
+        <!-- 5 -->
+        <p:column headerText="Id" footerText="Id">
+            <h:outputText value="#{car.id}" />
+        </p:column>
+        <p:column headerText="Year" footerText="Year">
+            <h:outputText value="#{car.year}" />
+        </p:column>
+        <p:column headerText="Brand" footerText="Brand">
+            <h:outputText value="#{car.brand}" />
+        </p:column>
+        <p:column headerText="Color" footerText="Color">
+            <h:outputText value="#{car.color}" />
+        </p:column>
+ 
+       </p:dataTable>       
+			  
+			</h:form>
+	        	<!--  Login End -->
+			</div>
+			
+			
+		</div>
+    </ui:define>
+    
+    <ui:define name="footer">
+        
+       
+    </ui:define>
+</ui:composition>

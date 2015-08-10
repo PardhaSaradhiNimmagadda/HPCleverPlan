@@ -141,7 +141,13 @@
 			        <p:column headerText="Selected Configuration">
 			            <h:outputText value="#{user.selected_configuration}" />
 			        </p:column>
-			        <p:column headerText="Availiable to Promise">
+			        <p:column headerText=" FGI Availability">
+			            <h:outputText value="#{user.fgi_availability}" />
+			        </p:column>
+			        <p:column headerText="Material Availability">
+			            <h:outputText value="#{user.material_availability}" />
+			        </p:column>
+			        <p:column headerText="Availiable to Promise (FGI+Material)">
 			            <h:outputText value="#{user.avaliable_to_promise}" />
 			        </p:column> 
 			        <p:column headerText="Total Weeks in Order Completion">
@@ -205,9 +211,11 @@
 			            
 			            <p:inputText  styleClass="inputMargin pull-right" id="qb"  placeholder="Quantity to block" />
 			            
-			            <p:inputText styleClass="inputMargin pull-right" style="width: 300px;" id="qb1"  placeholder="SKU Matched Suggestion" />
+			            <p:inputTextarea styleClass="inputMargin pull-right" style="width: 300px;" id="qb1" rows="1" cols="33" placeholder="SKU Matched Suggestion" />
 			            
-			            <span style="float: right; line-height: 32px; margin-right: 15px;">Pre Configured Configuration</span>
+			            <!-- <p:inputText styleClass="inputMargin pull-right" style="width: 300px;" id="qb1"  placeholder="SKU Matched Suggestion" /> -->
+			            
+			            <span style="float: right; line-height: 32px;margin-right: 15px;">Pre Configured Configuration</span>
 						
 							 
 			            

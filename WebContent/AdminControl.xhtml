@@ -1,0 +1,141 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="AdminTemplate.xhtml">
+
+    <ui:define name="head">
+       <style>
+    .ui-widget-header {
+     background: none repeat scroll 0 0 #0096D6 !important;
+     color: #fff;
+    }
+    
+    
+    .ui-panelgrid {
+    margin-top: 30%;
+    }
+    .footer  {
+    margin-top: 5%;
+    }
+    .ui-panelgrid .ui-panelgrid-cell{
+    padding: 9px 93px;
+    }
+    .col-md-3 {
+    margin-left: 19px;
+    margin-right: -58px;
+    }
+	</style>
+    </ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">PRODUCT AVAILABILITY &amp; ALTERNATIVES</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="float: right; font-size: 12px; margin-right: 15px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>
+    
+    
+    
+    
+    
+    <ui:define name="main_content">
+    <h:form>
+        <div class="row">
+         <div class="col-md-3">
+	         
+         		
+         		<div class="HeaderText">
+         		USER CONTROL
+	     		</div>
+	     		        <div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">REVIEW USERS DATA AND PRIVILEGES</div>
+	     		        <div class="table1" style="border-bottom:0px !important;background-color: #d1dded">USER APPROVALS</div>	
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">CHANGE USER FUNCTION</div>
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">RE SET USER PASSWORD</div>	
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">SEND MESSAGE TO USERS</div>
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">OTHERS</div>	
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+		         		<div class="table1" style="background-color:#d1dded">OTHERS</div>	
+		         		
+	     		
+				 </div>
+		        	<div class="col-md-3">
+		         		<div class="HeaderText">
+		         		<p>FUNCTIONAL SOLUTION CONTROL</p>
+		            </div>
+		         	    <div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">REVIEW USER CART</div>
+	     		        <div class="table1" style="border-bottom:0px !important;background-color: #d1dded">EMPTY USER CART</div>	
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">OTHERS</div>	
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">OTHERS</div>	
+		         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+		         		<div class="table1" Style="background-color: #d1dded">OTHERS</div>		
+			     		
+				 </div>
+				 <div class="col-md-3">
+		         		<div class="HeaderText">
+		         		SYSTEM LOGS
+		         		</div>
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">USER ACCESS LOGS</div>
+		     		        <div class="table1" style="border-bottom:0px !important;background-color: #d1dded">DATA INPUT LOGS</div>	
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">DATA UPDATE LOGS</div>
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">SYSTEM SECURITY LOGS</div>	
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">OTHERS</div>	
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+			         		<div class="table1" Style="background-color: #d1dded">OTHERS</div>	
+		         		
+			     		
+				 </div>
+				 <div class="col-md-3">
+		         		<div class="HeaderText">
+		         		SYSTEM CONTROL
+		         		</div>
+	         		        <div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">SYSTEM REBOOT</div>
+		     		        <div class="table1" style="border-bottom:0px !important;background-color: #d1dded">SYSTEM SHUT DOWN</div>	
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">MAINTENANCE TIME SET &#38; MESSAGING</div>
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">OTHERS</div>	
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #d1dded">OTHERS</div>	
+			         		<div class="table1" style="border-bottom:0px !important;background-color: #e9edf5">OTHERS</div>
+			         		<div class="table1" Style="background-color: #d1dded">OTHERS</div>
+		         		
+			     		
+				 </div>
+			     		
+         
+	    </div>
+	    
+			</h:form>
+			<!-- Login Details -->
+
+	        	<!--  Login End -->
+		
+		
+    </ui:define>
+    
+    <ui:define name="footer">
+        <div class="Copyright_information_HP_inc_text"> </div>
+       
+    </ui:define>
+</ui:composition>

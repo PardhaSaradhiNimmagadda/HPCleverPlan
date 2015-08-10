@@ -1,0 +1,57 @@
+.controlsub{
+	text-align: center;
+	border: 1px solid #0096D6;
+	background: #0096D6;
+	color: #fff;
+	font-size: 15px;
+	margin-bottom: 0.4%;
+	width: 96%;
+	margin-left: 2%;
+} 
+
+.dtc{
+	font-size: 9px !important;
+	font-family: HPlight;
+	text-align: center;
+	color:#fff !important;
+}
+
+.dt{
+	font-size: 13px !important;
+	font-family: HPlight;
+	text-align: center;
+	color:#fff !important;
+}
+
+#dtv{
+	background: #0096D6;
+}
+
+.braziltime, .maintime, .maindate {
+	color: #0096D6;
+	font-style:oblique;
+	font-size: 15px;
+	
+}
+
+.panelcolor{
+	background:  00b0f0;
+}
+
+.ui-widget-content{
+	
+	border: 1px solid #fff !important;
+} 
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+
+	border: 1px solid #fff !important;
+
+}
+
+.controlfooter{
+	margin-top: 33% !important; 
+	border: 2px solid #0096D6 !important;
+	height: 50px !important;
+	line-height: 50px !important;
+}

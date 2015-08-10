@@ -194,12 +194,16 @@
 			           
 			        </p:column>
 			        
-			          <p:column headerText="Lead Time in Weeks" style="width: 10%">
+			        <p:column headerText="Lead Time in Weeks" style="width: 10%">
 			            <h:outputText value="#{user.weeks}" />
 			        </p:column> 
 			        
-			          <p:column headerText="Configuration Price" style="width: 12%">
+			        <p:column headerText="Configuration Price" style="width: 12%">
 			            <h:outputText value="#{user.price}" />
+			        </p:column>
+			        
+			        <p:column headerText="PPB" style="width: 12%">
+			            <h:outputText value="#{user.available}" />
 			        </p:column> 
 			        
 			        <p:column headerText="Comments" style="width: 13%">

@@ -70,6 +70,10 @@
    			margin-right: 15px;
    			margin-top: 1px;
    		}
+   		
+   		.ui-selectoneradio label {
+	       margin-right: 16px;
+	    }
 	</style>
 	
 	</ui:define>
@@ -102,25 +106,41 @@
     
     <ui:define name="left_sidebar">
        
-       <div class="paddingtop">
-      <p:selectOneMenu id="console"  style="width: 100%; background: #fff; height: 28%">
-            <f:selectItem itemLabel="Select Family Key" itemValue="" noSelectionOption="true" />
-            <f:selectItem itemLabel="Chiclet" itemValue="Chiclet" />
-            <f:selectItem itemLabel="Comet" itemValue="Comet" />
-            <f:selectItem itemLabel="Comet 14W 1.0" itemValue="Comet 14W 1.0" />
-            <f:selectItem itemLabel="Comet 740 G1" itemValue="Comet 740 G1" />
-            <f:selectItem itemLabel="Cyclone" itemValue="Cyclone" />
-            <f:selectItem itemLabel="Mondavi" itemValue="Mondavi" />
-            <f:selectItem itemLabel="Phelps" itemValue="Phelps" />
-            <f:selectItem itemLabel="Phelps 1.1" itemValue="Phelps 1.1" />
-            <f:selectItem itemLabel="Rampage" itemValue="Rampage" />
-            <f:selectItem itemLabel="Rolo" itemValue="Rolo" />
-            <f:selectItem itemLabel="Tobo 6U" itemValue="Tobo 6U" />
-            <f:selectItem itemLabel="Comet" itemValue="Comet" />
-            <f:selectItem itemLabel="Thriller" itemValue="Thriller" />
-            <f:selectItem itemLabel="Tootsie 745 G2" itemValue="Tootsie 745 G2" />
-        </p:selectOneMenu>
-	   <p:spinner type="number" placeholder="Units Needed" id="basic" min="0" max="10000" cellpadding="5"/>
+      <div class="paddingtop">
+      		<div class="sidebarheading_text">Sale Type</div>
+      		<p:selectOneRadio id="access" value="">
+             	<f:selectItem itemLabel="Consumer" itemValue="Yes" />
+                <f:selectItem itemLabel="Commercial" itemValue="No" />
+            </p:selectOneRadio><br/>
+            <div class="sidebarheading_text">Product Type</div>
+            <p:selectOneMenu id="product_type"  style="width: 100%; background: #fff; height: 28%">
+	            <f:selectItem itemLabel="Notebook" itemValue="Notebook" />
+	            <f:selectItem itemLabel="Desktop" itemValue="Desktop" />
+	            <f:selectItem itemLabel="Workstation" itemValue="Workstation" />
+	            <f:selectItem itemLabel="All" itemValue="All" />
+	        </p:selectOneMenu><br/><br/>
+            <div class="sidebarheading_text">Select Family Key</div>
+	      	<p:selectOneMenu id="console"  style="width: 100%; background: #fff; height: 28%">
+	            <f:selectItem itemLabel="Chiclet" itemValue="Chiclet" />
+	            <f:selectItem itemLabel="Comet" itemValue="Comet" />
+	            <f:selectItem itemLabel="Comet 14W 1.0" itemValue="Comet 14W 1.0" />
+	            <f:selectItem itemLabel="Comet 740 G1" itemValue="Comet 740 G1" />
+	            <f:selectItem itemLabel="Cyclone" itemValue="Cyclone" />
+	            <f:selectItem itemLabel="Mondavi" itemValue="Mondavi" />
+	            <f:selectItem itemLabel="Phelps" itemValue="Phelps" />
+	            <f:selectItem itemLabel="Phelps 1.1" itemValue="Phelps 1.1" />
+	            <f:selectItem itemLabel="Rampage" itemValue="Rampage" />
+	            <f:selectItem itemLabel="Rolo" itemValue="Rolo" />
+	            <f:selectItem itemLabel="Tobo 6U" itemValue="Tobo 6U" />
+	            <f:selectItem itemLabel="Comet" itemValue="Comet" />
+	            <f:selectItem itemLabel="Thriller" itemValue="Thriller" />
+	            <f:selectItem itemLabel="Tootsie 745 G2" itemValue="Tootsie 745 G2" />
+	        </p:selectOneMenu>
+	        <br/><br/>
+	        <div class="sidebarheading_text">SKU Description (If FGI)</div>
+	        <p:inputTextarea styleClass="" id="qb2" rows="2" style="width: 100%" placeholder="SKU Description (If FGI)" /><br/><br/>
+	        <div class="sidebarheading_text">Units Needed</div>
+	   		<p:spinner type="number" placeholder="Units Needed" id="basic" min="0" max="10000" cellpadding="5"/>
 	   
        </div>
       

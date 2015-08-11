@@ -636,3 +636,15 @@ body {
 
 
 /* sadhana CSS END */
+
+
+
+
+
+.sidebarheading_text {
+	height: 30px;
+	line-height: 30px;
+	color: #0096D6;
+	font-size: 18px;
+	font-family: HPLight;
+}

@@ -1,0 +1,219 @@
+<div class="row NOP">
+		  	<div class="col-md-6 NOP">
+				<div class="blockHeading" >PN Filters</div>
+				<div class="blockContent">
+					<p:selectOneMenu id="product_stage"  style="width: 100%; background: #fff;">
+			            <f:selectItem itemLabel="FGI" itemValue="FGI" />
+			            <f:selectItem itemLabel="Component" itemValue="Component" />
+			        </p:selectOneMenu>
+				</div>				
+		  	</div>
+		  	<div class="col-md-6 NOP">
+	  			<div class="blockHeading">product filters</div>
+	     		<div class="blockContent">
+	     			<p:selectOneMenu id="product_filters"  style="width: 100%; background: #fff;">
+			            <f:selectItem itemLabel="Buy - Sell" itemValue="buysell" />
+			            <f:selectItem itemLabel="GTK" itemValue="GTK" />
+			            <f:selectItem itemLabel="TK" itemValue="TK" />
+			        </p:selectOneMenu>
+	     		</div>
+		  	</div>
+		</div>
+		<div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">Commodity Level</div>
+	     		<div class="blockContent">
+					<p:selectOneMenu id="commodity_level"  style="width: 100%; background: #fff;">
+			            <f:selectItem itemLabel="HDD" itemValue="HDD" />
+			            <f:selectItem itemLabel="Processor" itemValue="Processor" />
+			            <f:selectItem itemLabel="RAM" itemValue="Ram" />
+			        </p:selectOneMenu>
+			        <p:inputText style="width: 100%;"  placeholder="Specific Part Numbers" />
+				</div>
+		  	</div>		  	
+		  	<div class="col-md-6 NOP">
+	   			<div class="blockHeading">import filters</div>
+	    		<div class="blockContent" style="height: 39px; line-height: 39px;">
+	    			<div class="row">
+	     				<div class="col-md-6 pull-left">
+	     					<p:selectBooleanCheckbox value="#" /> Imported
+	     				</div>
+	     				<div class="col-md-6 pull-right">
+		      				<p:selectBooleanCheckbox value="#" /> Local
+		      			</div>
+	     			</div>
+	    		</div>
+		  </div>
+		</div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">supplier filters</div>
+		      	<div class="blockContent">
+		      		<p:selectOneMenu id="supplier_name"  style="width: 100%; background: #fff;">
+			            <f:selectItem itemLabel="Supplier Name" itemValue="sn" />
+			            <f:selectItem itemLabel="Supplier Name 1" itemValue="sn1" />
+			            <f:selectItem itemLabel="Supplier Name 2" itemValue="sn2" />
+			            <f:selectItem itemLabel="Supplier Name 3" itemValue="sn3" />
+			            <f:selectItem itemLabel="Supplier Name 4" itemValue="sn4" />
+			        </p:selectOneMenu>
+		      	</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">A B C Class</div>
+	     		<div class="blockContent" style="height: 39px; line-height: 39px;">
+	     			<div class="row">
+	     				<div class="col-md-4 pull-left">
+	     					<p:selectBooleanCheckbox value="#" /> A
+	     				</div>
+	     				<div class="col-md-4">
+		      				<p:selectBooleanCheckbox value="#" /> B
+		      			</div>
+	     				<div class="col-md-4 pull-right">
+		      				<p:selectBooleanCheckbox value="#" /> C
+		      			</div>
+	     			</div>
+	     		</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">Lead time</div>
+		      	<div class="blockContent">
+		      		<div class="row NOP" >
+	     				<div class="col-md-4 pull-left NOP">
+	     					<p:selectBooleanCheckbox value="#" /> Long
+	     				</div>
+	     				<div class="col-md-4 NOP">
+		      				<p:selectBooleanCheckbox value="#" /> Medium
+		      			</div>
+	     				<div class="col-md-4 pull-right NOP">
+		      				<p:selectBooleanCheckbox value="#" /> Short
+		      			</div>
+	     			</div>
+		      	</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">Inventory $</div>
+	     		<div class="blockContent">
+	     			<div class="row NOP" >
+	     				<div class="col-md-4 pull-left NOP">
+	     					<p:selectBooleanCheckbox value="#" /> Long
+	     				</div>
+	     				<div class="col-md-4 NOP">
+		      				<p:selectBooleanCheckbox value="#" /> Medium
+		      			</div>
+	     				<div class="col-md-4 pull-right NOP">
+		      				<p:selectBooleanCheckbox value="#" /> Short
+		      			</div>
+	     			</div>
+	     		</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">Moths Year Selector</div>
+		      	<div class="blockContent">
+		      		<div class="row">
+		      			<div class="col-md-6">
+		      				<p:selectOneMenu id="month_selector"  style="width: 100%; background: #fff;">
+					            <f:selectItem itemLabel="January" itemValue="jan" />
+					            <f:selectItem itemLabel="February" itemValue="feb" />
+					            <f:selectItem itemLabel="March" itemValue="mar" />
+					            <f:selectItem itemLabel="April" itemValue="apr" />
+					            <f:selectItem itemLabel="May" itemValue="may" />
+					            <f:selectItem itemLabel="June" itemValue="jun" />
+					            <f:selectItem itemLabel="July" itemValue="jul" />
+					            <f:selectItem itemLabel="August" itemValue="aug" />
+					            <f:selectItem itemLabel="September" itemValue="sep" />
+					            <f:selectItem itemLabel="October" itemValue="oct" />
+					            <f:selectItem itemLabel="November" itemValue="nov" />
+					            <f:selectItem itemLabel="December" itemValue="dec" />
+					        </p:selectOneMenu>
+		      			</div>
+		      			<div class="col-md-6">
+		      				<p:selectOneMenu id="year_selector"  style="width: 100%; background: #fff;">
+					            <f:selectItem itemLabel="2015" itemValue="2015" />
+					            <f:selectItem itemLabel="2014" itemValue="2014" />
+					            <f:selectItem itemLabel="2013" itemValue="2013" />
+					            <f:selectItem itemLabel="2012" itemValue="2012" />
+					            <f:selectItem itemLabel="2011" itemValue="2011" />
+					            <f:selectItem itemLabel="2010" itemValue="2010" />
+					            <f:selectItem itemLabel="2009" itemValue="2009" />
+					            <f:selectItem itemLabel="2008" itemValue="2008" />
+					            <f:selectItem itemLabel="2007" itemValue="2007" />
+					            <f:selectItem itemLabel="2006" itemValue="2006" />
+					            <f:selectItem itemLabel="2005" itemValue="2005" />
+					            <f:selectItem itemLabel="2004" itemValue="2004" />
+					        </p:selectOneMenu>
+		      			</div>
+		      		</div>
+		      	</div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">Forecast Error</div>
+	     		<div class="blockContent">
+	     			<div class="row NOP" >
+	     				<div class="col-md-4 pull-left NOP">
+	     					<p:selectBooleanCheckbox value="#" /> Long
+	     				</div>
+	     				<div class="col-md-4 NOP">
+		      				<p:selectBooleanCheckbox value="#" /> Medium
+		      			</div>
+	     				<div class="col-md-4 pull-right NOP">
+		      				<p:selectBooleanCheckbox value="#" /> Short
+		      			</div>
+	     			</div>
+	     		</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
+		  		<div  class="blockHeading">Review Parameters - What IF</div>
+		  		<div  class="blockHeading1">Demand Variation</div>
+			    <div class="blockContent">
+			    	<div class="row NOP">
+			    		<div class="col-md-8 NOP">
+			    			<p:slider for="txt3" step="10"  style="margin-top: 8px;" />
+			    		</div>
+			    		<div class="col-md-4 NOP">
+			    			<p:inputText id="txt3" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="#{sliderView.number3}" />
+			    		</div>
+			    	</div>
+			    </div>
+			    <div  class="blockHeading1">Lead Time Variation</div>
+			    <div class="blockContent">
+			      	<div class="row NOP">
+			    		<div class="col-md-8 NOP">
+			    			<p:slider for="txt2" step="10"  style="margin-top: 8px;" />
+			    		</div>
+			    		<div class="col-md-4 NOP">
+			    			<p:inputText id="txt2" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="#{sliderView.number2}" />
+			    		</div>
+			    	</div>
+			    </div>
+			    <div  class="blockHeading1">Service Level</div>
+			    <div class="blockContent">
+			      	<div class="row NOP">
+			    		<div class="col-md-8 NOP">
+			    			<p:slider for="txt1" step="10"  style="margin-top: 8px;" />
+			    		</div>
+			    		<div class="col-md-4 NOP">
+			    			<p:inputText id="txt1" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="#{sliderView.number2}" />
+			    		</div>
+			    	</div>
+			    </div>
+		  	</div>
+		  	<div class="col-md-6 NOP">
+	  			<!-- <div  class="blockHeading">Review Reports</div>
+	     		<div class="blockContent">
+			      	<div class="row">
+			      		<div class="col-md-6 NOP">
+			      			Reports
+			      		</div>
+			      		<div class="col-md-6 NOP">
+			      			Sliders
+			      		</div>
+			      	</div>
+		      	</div> -->
+		  	</div>
+	  	</div>

@@ -3,7 +3,7 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
-                template="templateLess.xhtml">
+                template="templateNew.xhtml">
                 
 	<ui:define name="title">Inventory Optimization</ui:define>
 	
@@ -67,6 +67,58 @@
 	    	border: none !important;
 	    }
 	</style>
+	<script>
+		$(document).ready(function(){
+			$("#plus3").click(function(){
+				$("#txt3").focus();
+				var value = $("#txt3").val();
+				var cons = 1;
+				var newValue = parseInt(value)+parseInt(cons); 
+				$("#txt3").val(newValue);
+				$("#slider3 .ui-slider-handle").css("left", newValue+"%");
+			});
+			$("#minus3").click(function(){
+				$("#txt3").focus();
+				var value = $("#txt3").val();
+				var cons = 1;
+				var newValue = parseInt(value)-parseInt(cons); 
+				$("#txt3").val(newValue);
+				$("#slider3 .ui-slider-handle").css("left", newValue+"%");
+			});
+			$("#plus2").click(function(){
+				$("#txt2").focus();
+				var value = $("#txt2").val();
+				var cons = 1;
+				var newValue = parseInt(value)+parseInt(cons); 
+				$("#txt2").val(newValue);
+				$("#slider2 .ui-slider-handle").css("left", newValue+"%");
+			});
+			$("#minus2").click(function(){
+				$("#txt2").focus();
+				var value = $("#txt2").val();
+				var cons = 1;
+				var newValue = parseInt(value)-parseInt(cons); 
+				$("#txt2").val(newValue);
+				$("#slider2 .ui-slider-handle").css("left", newValue+"%");
+			});
+			$("#plus1").click(function(){
+				$("#txt1").focus();
+				var value = $("#txt1").val();
+				var cons = 1;
+				var newValue = parseInt(value)+parseInt(cons); 
+				$("#txt1").val(newValue);
+				$("#slider1 .ui-slider-handle").css("left", newValue+"%");
+			});
+			$("#minus1").click(function(){
+				$("#txt1").focus();
+				var value = $("#txt1").val();
+				var cons = 1;
+				var newValue = parseInt(value)-parseInt(cons); 
+				$("#txt1").val(newValue);
+				$("#slider1 .ui-slider-handle").css("left", newValue+"%");
+			});
+		});
+	</script>
 	
 	</ui:define>
     
@@ -98,7 +150,7 @@
 <ui:define name="left_sidebar">
 	<div class="filtersmargin">
 		<div class="row NOP">
-			<div class="col-md-12 NOP">
+		  	<div class="col-md-6 NOP">
 				<div class="blockHeading" >PN Filters</div>
 				<div class="blockContent">
 					<p:selectOneMenu id="product_stage"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
@@ -107,34 +159,55 @@
 			        </p:selectOneMenu>
 				</div>				
 		  	</div>
-		  	<div class="col-md-12 NOP">
+		  	<div class="col-md-6 NOP">
 	  			<div class="blockHeading">product filters</div>
 	     		<div class="blockContent">
-	     			<p:selectOneMenu id="product_filters"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
+	     			<p:selectOneMenu id="product_filters"  style="width: 100%; background: #fff;"  effect="fade" var="t" filter="true" filterMatchMode="startsWith">
 			            <f:selectItem itemLabel="Buy - Sell" itemValue="buysell" />
 			            <f:selectItem itemLabel="GTK" itemValue="GTK" />
 			            <f:selectItem itemLabel="TK" itemValue="TK" />
 			        </p:selectOneMenu>
 	     		</div>
 		  	</div>
-		  	<div class="col-md-12 NOP">
+		</div>
+		<div class="row NOP">
+		  	<div class="col-md-6 NOP">
 		  		<div class="blockHeading">Commodity Level</div>
 	     		<div class="blockContent">
-					<p:selectOneMenu id="commodity_level"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
+					<p:selectOneMenu itemStyle="width:100%;" id="commodity_level"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
 			            <f:selectItem itemLabel="HDD" itemValue="HDD" />
 			            <f:selectItem itemLabel="Processor" itemValue="Processor" />
 			            <f:selectItem itemLabel="RAM" itemValue="Ram" />
 			        </p:selectOneMenu>
-			        <p:selectOneMenu id="supplier_name"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
-			            <f:selectItem itemLabel="Supplier Name" itemValue="sn" />
-			            <f:selectItem itemLabel="Supplier Name 1" itemValue="sn1" />
-			            <f:selectItem itemLabel="Supplier Name 2" itemValue="sn2" />
-			            <f:selectItem itemLabel="Supplier Name 3" itemValue="sn3" />
-			            <f:selectItem itemLabel="Supplier Name 4" itemValue="sn4" />
+			        <p:selectOneMenu itemStyle="width:100%;" id="specific_parts"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
+						
+			            <f:selectItem itemLabel="Specific Parts" itemValue="sp" />
+			            <f:selectItem itemLabel="Specific Parts 1" itemValue="sp1" />
+			            <f:selectItem itemLabel="Specific Parts 2" itemValue="sp2" />
+			            <f:selectItem itemLabel="Specific Parts 3" itemValue="sp3" />
+			            <f:selectItem itemLabel="Specific Parts 4" itemValue="sp4" />
+			            <f:selectItem itemLabel="Specific Parts 5" itemValue="sp5" />
+			            <f:selectItem itemLabel="Specific Parts 6" itemValue="sp6" />
+			            <f:selectItem itemLabel="Specific Parts 7" itemValue="sp7" />
 			        </p:selectOneMenu>
 				</div>
-		  	</div>
-		  	<div class="col-md-12 NOP">
+		  	</div>		  	
+		  	<div class="col-md-6 NOP">
+	   			<div class="blockHeading">import filters</div>
+	    		<div class="blockContent" style="height: 39px; line-height: 39px;">
+	    			<div class="row">
+	     				<div class="col-md-6 pull-left">
+	     					<p:selectBooleanCheckbox value="#" /> Imported
+	     				</div>
+	     				<div class="col-md-6 pull-right">
+		      				<p:selectBooleanCheckbox value="#" /> Local
+		      			</div>
+	     			</div>
+	    		</div>
+		  </div>
+		</div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
 		  		<div class="blockHeading">supplier filters</div>
 		      	<div class="blockContent">
 		      		<p:selectOneMenu id="supplier_name"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
@@ -146,22 +219,9 @@
 			        </p:selectOneMenu>
 		      	</div>
 		  	</div>
-		  	<div class="col-md-12 NOP">
-	   			<div class="blockHeading">import filters</div>
-	    		<div class="blockContent">
-	    			<div class="row">
-	     				<div class="col-md-6 pull-left">
-	     					<p:selectBooleanCheckbox value="#" /> Imported
-	     				</div>
-	     				<div class="col-md-6 pull-right">
-		      				<p:selectBooleanCheckbox value="#" /> Local
-		      			</div>
-	     			</div>
-	    		</div>
-		  </div>
-		  <div class="col-md-12 NOP">
+		  	<div class="col-md-6 NOP">
 		  		<div class="blockHeading">A B C Class</div>
-	     		<div class="blockContent">
+	     		<div class="blockContent" style="height: 39px; line-height: 39px;">
 	     			<div class="row">
 	     				<div class="col-md-4 pull-left">
 	     					<p:selectBooleanCheckbox value="#" /> A
@@ -175,60 +235,48 @@
 	     			</div>
 	     		</div>
 		  	</div>
-		  	<div class="col-md-12 NOP">
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
 		  		<div class="blockHeading">Lead time</div>
 		      	<div class="blockContent">
 		      		<div class="row NOP" >
 	     				<div class="col-md-4 pull-left NOP">
-	     					<p:selectBooleanCheckbox value="#" /> Long
+	     					<p:selectBooleanCheckbox value="#" /> H
 	     				</div>
 	     				<div class="col-md-4 NOP">
-		      				<p:selectBooleanCheckbox value="#" /> Medium
+		      				<p:selectBooleanCheckbox value="#" /> M
 		      			</div>
 	     				<div class="col-md-4 pull-right NOP">
-		      				<p:selectBooleanCheckbox value="#" /> Short
+		      				<p:selectBooleanCheckbox value="#" /> L
 		      			</div>
 	     			</div>
 		      	</div>
 		  	</div>
-		  	<div class="col-md-12 NOP">
+		  	<div class="col-md-6 NOP">
 		  		<div class="blockHeading">Inventory $</div>
 	     		<div class="blockContent">
 	     			<div class="row NOP" >
 	     				<div class="col-md-4 pull-left NOP">
-	     					<p:selectBooleanCheckbox value="#" /> Long
+	     					<p:selectBooleanCheckbox value="#" /> H
 	     				</div>
 	     				<div class="col-md-4 NOP">
-		      				<p:selectBooleanCheckbox value="#" /> Medium
+		      				<p:selectBooleanCheckbox value="#" /> M
 		      			</div>
 	     				<div class="col-md-4 pull-right NOP">
-		      				<p:selectBooleanCheckbox value="#" /> Short
+		      				<p:selectBooleanCheckbox value="#" /> L
 		      			</div>
 	     			</div>
 	     		</div>
 		  	</div>
-		  	<div class="col-md-12 NOP">
-		  		<div class="blockHeading">Forecast Error</div>
-	     		<div class="blockContent">
-	     			<div class="row NOP" >
-	     				<div class="col-md-4 pull-left NOP">
-	     					<p:selectBooleanCheckbox value="#" /> Long
-	     				</div>
-	     				<div class="col-md-4 NOP">
-		      				<p:selectBooleanCheckbox value="#" /> Medium
-		      			</div>
-	     				<div class="col-md-4 pull-right NOP">
-		      				<p:selectBooleanCheckbox value="#" /> Short
-		      			</div>
-	     			</div>
-	     		</div>
-		  	</div>
-		  	<div class="col-md-12 NOP">
+		  </div>
+		  <div class="row NOP">
+		  	<div class="col-md-6 NOP">
 		  		<div class="blockHeading">Moths Year Selector</div>
 		      	<div class="blockContent">
 		      		<div class="row NOP">
 		      			<div class="col-md-6 NOP">
-		      				<p:selectOneMenu id="month_selector"  style="width: 100%; background: #fff;" effect="fade" var="t" filter="true" filterMatchMode="startsWith">
+		      				<p:selectOneMenu id="month_selector"  style="width: 100%; background: #fff;"  effect="fade" var="t" filter="true" filterMatchMode="startsWith">
 					            <f:selectItem itemLabel="January" itemValue="jan" />
 					            <f:selectItem itemLabel="February" itemValue="feb" />
 					            <f:selectItem itemLabel="March" itemValue="mar" />
@@ -262,53 +310,94 @@
 		      		</div>
 		      	</div>
 		  	</div>
+		  	<div class="col-md-6 NOP">
+		  		<div class="blockHeading">Forecast Error</div>
+	     		<div class="blockContent">
+	     			<div class="row NOP" >
+	     				<div class="col-md-4 pull-left NOP">
+	     					<p:selectBooleanCheckbox value="#" /> H
+	     				</div>
+	     				<div class="col-md-4 NOP">
+		      				<p:selectBooleanCheckbox value="#" /> M
+		      			</div>
+	     				<div class="col-md-4 pull-right NOP">
+		      				<p:selectBooleanCheckbox value="#" /> L
+		      			</div>
+	     			</div>
+	     		</div>
+		  	</div>
+		  </div>
+		  <div class="row NOP">
 		  	<div class="col-md-12 NOP">
 		  		<div  class="blockHeading">Review Parameters - What IF</div>
 		  		<div class="blockContent">
 			  		<div  class="blockHeading1">Demand Variation</div>
 				    <div class="blockContent1">
 				    	<div class="row NOP">
-				    		<div class="col-md-8 NOP">
-				    			<p:slider for="txt3" step="10"  style="margin-top: 8px;" />
+				    		<div class="col-md-2">
+				    			<p:commandButton id="minus3" value="-" styleClass="go_button" /> 
 				    		</div>
-				    		<div class="col-md-4 NOP">
-				    			<p:inputText id="txt3" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="#{sliderView.number3}" />
+				    		<div class="col-md-8">
+				    			<p:slider id="slider3" for="txt3" step="10"  style="margin-top: 8px;" /> 
+				    		</div>
+				    		<div class="col-md-2">
+				    			<p:commandButton id="plus3" value="+" styleClass="go_button pull-right" />
+				    		</div>
+				    		<div class="col-md-2 NOP" style="display: none">
+				    			<p:inputText id="txt3" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="0" />
 				    		</div>
 				    	</div>
 				    </div>
 				    <div  class="blockHeading1">Lead Time Variation</div>
 				    <div class="blockContent1">
 				      	<div class="row NOP">
-				    		<div class="col-md-8 NOP">
-				    			<p:slider for="txt2" step="10"  style="margin-top: 8px;" />
+				    		<div class="col-md-2">
+				    			<p:commandButton id="minus2" value="-" styleClass="go_button" /> 
 				    		</div>
-				    		<div class="col-md-4 NOP">
-				    			<p:inputText id="txt2" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="#{sliderView.number2}" />
+				    		<div class="col-md-8">
+				    			<p:slider  id="slider2" for="txt2" step="9"  style="margin-top: 8px;" /> 
+				    		</div>
+				    		<div class="col-md-2">
+				    			<p:commandButton id="plus2" value="+" styleClass="go_button pull-right" />
+				    		</div>
+				    		<div class="col-md-2 NOP" style="display: none">
+				    			<p:inputText id="txt2" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="0" />
 				    		</div>
 				    	</div>
 				    </div>
 				    <div  class="blockHeading1">Service Level</div>
-				    <div class="blockConten1t">
+				    <div class="blockContent1">
 				      	<div class="row NOP">
-				    		<div class="col-md-8 NOP">
-				    			<p:slider for="txt1" step="10"  style="margin-top: 8px;" />
+				    		<div class="col-md-2">
+				    			<p:commandButton id="minus1" value="-" styleClass="go_button" /> 
 				    		</div>
-				    		<div class="col-md-4 NOP">
-				    			<p:inputText id="txt1" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="#{sliderView.number2}" />
+				    		<div class="col-md-8">
+				    			<p:slider  id="slider1" for="txt1" step="10"  style="margin-top: 8px;" /> 
+				    		</div>
+				    		<div class="col-md-2">
+				    			<p:commandButton id="plus1" value="+" styleClass="go_button pull-right" />
+				    		</div>
+				    		<div class="col-md-2 NOP" style="display: none">
+				    			<p:inputText id="txt1" style="width: 100%; background: transparent none repeat scroll 0% 0%; border: none !important;" value="0" />
 				    		</div>
 				    	</div>
 				    </div>
-				</div>
+				 </div>
 		  	</div>
-		</div>
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+		  	<div class="col-md-6 NOP">
+	  			<!-- <div  class="blockHeading">Review Reports</div>
+	     		<div class="blockContent">
+			      	<div class="row">
+			      		<div class="col-md-6 NOP">
+			      			Reports
+			      		</div>
+			      		<div class="col-md-6 NOP">
+			      			Sliders
+			      		</div>
+			      	</div>
+		      	</div> -->
+		  	</div>
+	  	</div>
 	  </div>   			     	
 </ui:define>
 
@@ -414,20 +503,57 @@
         <div class="col-md-6">
 	         <div class="row">
        		 	<div class="col-md-6 col-sm-6 col-xs-6 NO NOT">
-	         		<div class="blockHeader fontheader">INVENTORY TRADEND CHART</div>
-		     		<div class="blocktext">Actual Inventory Vs Optimized Inventory-WOS</div>	
+	         		<div class="blockHeader fontheader">Inventory Traded Chart</div>
+		     		<div class="blocktext">
+		     		<h:form>
+		     			<p:growl id="growl" showDetail="true" />
+		     			<p:chart type="bar" model="#{chartView.barModel}" style="width:100%;height:250px;">
+				            <p:ajax event="itemSelect" listener="#{chartView.itemSelect}" update="growl" />
+				        </p:chart>
+				    </h:form>  
+		     		</div>	
 			   		<div class="blockHeader">$ INVENTORY TREAD</div>
-		     		<div class="blocktext">Actual Inventory Vs Optimized Inventory</div>	
+		     		<div class="blocktext">
+		     			  <h:form>
+			     			<p:chart type="pie" model="#{chartView.pieModel1}" style="width:100%;height:250px">
+					            <p:ajax event="itemSelect" listener="#{chartView.itemSelect}" />
+					        </p:chart>
+					    </h:form>
+		     		</div>	
 					<div class="blockHeader">Safety Stack</div>
-		     		<div class="blocktext">Min/ Optimal/ Maximum safety stock in WOS</div>	
+		     		<div class="blocktext">
+		     			<h:form>
+			     			<p:chart type="bar" model="#{chartView.barModel}" style="width:100%;height:250px;">
+					            <p:ajax event="itemSelect" listener="#{chartView.itemSelect}"  />
+					        </p:chart>
+					    </h:form>
+		     		</div>	
 				 </div>
 	        	<div class="col-md-6 col-sm-6 col-xs-6 NO">
 	                <div class="blockHeader">FORCEST ACCURACY</div>
-		     		<div class="blocktext">Business forecast Accuracy</div>	
+		     		<div class="blocktext">
+		     			<h:form>
+			     			<p:chart type="pie" model="#{chartView.pieModel1}" style="width:100%;height:250px">
+					            <p:ajax event="itemSelect" listener="#{chartView.itemSelect}" />
+					        </p:chart>
+					    </h:form> 
+		     		</div>	
 			        <div class="blockHeader">RISK ASSESSMENT</div>
-		     		<div class="blocktext">Potential Future Shortage Weeks</div>	
+		     		<div class="blocktext">
+		     			<h:form>
+			     			<p:chart type="bar" model="#{chartView.barModel}" style="width:100%;height:250px;">
+					            <p:ajax event="itemSelect" listener="#{chartView.itemSelect}"  />
+					        </p:chart>
+					    </h:form>
+		     		</div>	
 					<div class="blockHeader">BEST Forecast Accuracy</div>
-		     		<div class="blocktext">Best Forecast(Actual,Corrected or this system generated)accuracy</div>	
+		     		<div class="blocktext">
+		     			<h:form>
+			     			<p:chart type="pie" model="#{chartView.pieModel1}" style="width:100%;height:250px">
+					            <p:ajax event="itemSelect" listener="#{chartView.itemSelect}" />
+					        </p:chart>
+					    </h:form>
+		     		</div>	
 			   </div>
          	</div>
 		</div>

@@ -371,19 +371,6 @@ body {
 }
 
 
-.blockHeading1{
-	text-align: center;
-	font-family: HPBold;
-	margin-top: 1px; 
-	background: #5a5a5a;
-	margin-left: 0px;
-	width: 100%;
-	color: #fff;
-	font-size: 16px;
-}
-
-
-
 .sub-block2{
 	color:#000 !important;
 	
@@ -420,26 +407,23 @@ body {
 }
 
 .blockHeading {
-	 border: 1px solid #0096D6;
-	 background: #ccc;
-	 text-align: center;
-	 font-family: HPBold;
-	 margin-top: 5px;
-	 margin-left: 0px;
+	 font-family: HPLight;
+	 margin-top: 10px;
 	 width: 100%;
 	 color: #fff;
-	 font-size: 16px;
+	 font-size: 18px;
+	 text-transform: capitalize;
+	 background: #0096D6;
+	 padding: 5px;
 }
 
 .blockContent {
-	 background: #5A5A5A;
 	 font-family: HPLight;
-	 padding: 5px;
-	 color: #fff;
-	 min-height: 100px;
+	 padding-top: 5px;
 	 width: 100%;
-	 border: 1px solid #fbcab3;
-	 text-align: center;
+	 font-size: 12px;
+	 border: 1px solid #0096D6 !important;
+	 padding: 5px;
 }
 
 .NOP {
@@ -448,65 +432,33 @@ body {
 }
 
 .blockHeader{
-	 border: 2px solid #0096D6;
-	 margin-top: 4px;
-	 text-align: center;
-	 border-bottom: 0px;
-	 font-size: 14px;
-	font-weight: bold;	 
+	background: #0096D6;
+	color: #FFF;
+	padding: 5px;
+	font-family: HPLight !important;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.blockHeading1 {
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .blocktext{
-	 border: 2px solid #0096D6;
-	 text-align: center;
-	 min-height: 142px;
-	 padding-top: 15%;
 	 font-size: 12px;
 }
-
-.headercolor{
- background: #0096D6;
-}
-
 .headercolor1{
 	 background:#ADD8E6;
 	 border: 1px solid  #0096D6;
 	 padding:2%;
 }
 
-.contentcolor{
-	 background: #ADD8E6;
-	 border: 1px solid  #0096D6;
- 
-}
 
 .NO{
    padding-left: 0px !important;
    margin-right: -9px;  
-}
-
-.blockContent1{
-	 text-align: center;
-	 font-family: HPlight;
-	 margin-left: 0px;
-	 width: 100%;
-	 min-height: 45px;
-}
-
-.blockContent2{
-	 text-align: center;
-	 font-family: HPlight;
-	 margin-left: 0px;
-	 width: 100%;
-	 min-height: 53px;
-}
-
-.blockContent3{
-     text-align: center;
-	 font-family: HPlight;
-	 margin-left: 0px;
-	 width: 100%;
-	 min-height: 60px;
 }
 
 .controlheader{

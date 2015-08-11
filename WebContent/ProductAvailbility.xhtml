@@ -74,6 +74,11 @@
    		.ui-selectoneradio label {
 	       margin-right: 16px;
 	    }
+	    
+	    .ui-chkbox-box {
+	    	background: #0096D6 !important;
+	    	border: none !important;
+	    }
 	</style>
 	
 	</ui:define>
@@ -109,8 +114,14 @@
       <div class="paddingtop">
       		<div class="sidebarheading_text">Sale Type</div>
       		<div style="line-height: 15px !important;">
-	      		<p:selectBooleanCheckbox value="#" /> <span class="" style="margin-right: 24px;">Consumer</span>
-	      		<p:selectBooleanCheckbox value="#" /> <span class="">Commercial</span>
+      			<div class="row">
+      				<div class="col-md-6 pull-left">
+      					<p:selectBooleanCheckbox value="#" /> Consumer
+      				</div>
+      				<div class="col-md-6 pull-right">
+	      				<p:selectBooleanCheckbox value="#" /> Commercial
+	      			</div>
+      			</div>
 	      	</div>
       		<!-- <p:selectOneRadio id="access" value="">
              	<f:selectItem itemLabel="Consumer" itemValue="Yes" />

@@ -108,10 +108,14 @@
        
       <div class="paddingtop">
       		<div class="sidebarheading_text">Sale Type</div>
-      		<p:selectOneRadio id="access" value="">
+      		<div style="line-height: 15px !important;">
+	      		<p:selectBooleanCheckbox value="#" /> <span class="" style="margin-right: 24px;">Consumer</span>
+	      		<p:selectBooleanCheckbox value="#" /> <span class="">Commercial</span>
+	      	</div>
+      		<!-- <p:selectOneRadio id="access" value="">
              	<f:selectItem itemLabel="Consumer" itemValue="Yes" />
                 <f:selectItem itemLabel="Commercial" itemValue="No" />
-            </p:selectOneRadio><br/>
+            </p:selectOneRadio> --><br/>
             <div class="sidebarheading_text">Product Type</div>
             <p:selectOneMenu id="product_type"  style="width: 100%; background: #fff; height: 28%">
 	            <f:selectItem itemLabel="Notebook" itemValue="Notebook" />

@@ -24,6 +24,10 @@
 body {
 	font-family: 'HPRegular' !important;
 	overflow-x: hidden; 
+	background: -webkit-linear-gradient(#fff, #E6E6E6) !important; /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fff, #E6E6E6) !important; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fff, #E6E6E6) !important; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fff, #E6E6E6) !important; /* Standard syntax (must be last) */
 }
 
 .hpblue {

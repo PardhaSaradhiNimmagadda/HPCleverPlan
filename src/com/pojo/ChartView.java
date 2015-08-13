@@ -1,103 +1,80 @@
 package com.pojo;
 
 import javax.annotation.PostConstruct;
+
 import java.io.Serializable;
-import javax.faces.application.FacesMessage;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
-import org.primefaces.event.ItemSelectEvent;
+
+
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
  
-import org.primefaces.model.chart.Axis;
-import org.primefaces.model.chart.AxisType;
-import org.primefaces.model.chart.BarChartModel;
-import org.primefaces.model.chart.ChartSeries;
-import org.primefaces.model.chart.PieChartModel;
- 
+import org.primefaces.model.chart.DonutChartModel;
  
 @ManagedBean
 public class ChartView implements Serializable {
  
-    private BarChartModel barModel;
-    private PieChartModel pieModel1;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private DonutChartModel donutModel1;
+    private DonutChartModel donutModel2;
  
     @PostConstruct
     public void init() {
-        createBarModels();
-        createPieModels();
+        createDonutModels();
     }
  
-    public BarChartModel getBarModel() {
-        return barModel;
-    }
-     
-    public PieChartModel getPieModel1() {
-        return pieModel1;
-    }
- 
-    private void createBarModels() {
-        createBarModel();
+    public DonutChartModel getDonutModel1() {
+        return donutModel1;
     }
      
-    private void createBarModel() {
-        barModel = initBarModel();
-         
-        barModel.setTitle("Bar Chart");
-        barModel.setLegendPosition("ne");
-         
-        Axis xAxis = barModel.getAxis(AxisType.X);
-        xAxis.setLabel("Actual Inventory");
-         
-        Axis yAxis = barModel.getAxis(AxisType.Y);
-        yAxis.setLabel("Optimized Inventory");
-        yAxis.setMin(0);
-        yAxis.setMax(200);
+    public DonutChartModel getDonutModel2() {
+        return donutModel2;
     }
      
-    private BarChartModel initBarModel() {
-        BarChartModel model = new BarChartModel();
+    private void createDonutModels() {
+        donutModel1 = initDonutModel();
+        donutModel1.setTitle("Donut Chart");
+        donutModel1.setLegendPosition("w");
+         
+        donutModel2 = initDonutModel();
+        donutModel2.setTitle("Custom Options");
+        donutModel2.setLegendPosition("e");
+        donutModel2.setSliceMargin(5);
+        donutModel2.setShowDataLabels(true);
+        donutModel2.setDataFormat("value");
+        donutModel2.setShadow(false);
+    }
  
-        ChartSeries boys = new ChartSeries();
-        boys.setLabel("Inventory 1");
-        boys.set("2004", 120);
-        boys.set("2005", 100);
-        boys.set("2006", 44);
-        boys.set("2007", 150);
-        boys.set("2008", 25);
- 
-        ChartSeries girls = new ChartSeries();
-        girls.setLabel("Inventory 2");
-        girls.set("2004", 52);
-        girls.set("2005", 60);
-        girls.set("2006", 110);
-        girls.set("2007", 135);
-        girls.set("2008", 120);
- 
-        model.addSeries(boys);
-        model.addSeries(girls);
+    private DonutChartModel initDonutModel() {
+        DonutChartModel model = new DonutChartModel();
+         
+        Map<String, Number> circle1 = new LinkedHashMap<String, Number>();
+        circle1.put("Brand 1", 150);
+        circle1.put("Brand 2", 400);
+        circle1.put("Brand 3", 200);
+        circle1.put("Brand 4", 10);
+        model.addCircle(circle1);
+         
+        Map<String, Number> circle2 = new LinkedHashMap<String, Number>();
+        circle2.put("Brand 1", 540);
+        circle2.put("Brand 2", 125);
+        circle2.put("Brand 3", 702);
+        circle2.put("Brand 4", 421);
+        model.addCircle(circle2);
+         
+        Map<String, Number> circle3 = new LinkedHashMap<String, Number>();
+        circle3.put("Brand 1", 40);
+        circle3.put("Brand 2", 325);
+        circle3.put("Brand 3", 402);
+        circle3.put("Brand 4", 421);
+        model.addCircle(circle3);
          
         return model;
-    }
- 
-    private void createPieModels() {
-        createPieModel1();
-    }
-     
-    private void createPieModel1() {
-        pieModel1 = new PieChartModel();
-         
-        pieModel1.set("Brand 1", 540);
-        pieModel1.set("Brand 2", 325);
-        pieModel1.set("Brand 3", 702);
-        pieModel1.set("Brand 4", 421);
-         
-        pieModel1.setTitle("Simple Pie");
-        pieModel1.setLegendPosition("w");
-    }
- 
-    public void itemSelect(ItemSelectEvent event) {
-        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Item selected",
-                        "Item Index: " + event.getItemIndex() + ", Series Index:" + event.getSeriesIndex());
-         
-        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 }

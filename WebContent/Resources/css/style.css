@@ -407,14 +407,14 @@ body {
 }
 
 .blockHeading {
-	 font-family: HPLight;
-	 margin-top: 10px;
-	 width: 100%;
-	 color: #fff;
-	 font-size: 18px;
-	 text-transform: capitalize;
-	 background: #0096D6;
-	 padding: 5px;
+	font-family: HPLight;
+	margin-top: 5px;
+	width: 100%;
+	color: #FFF;
+	font-size: 15px;
+	text-transform: capitalize;
+	background: #0096D6 none repeat scroll 0% 0%;
+	padding: 3px 3px 3px 6px;
 }
 
 .blockContent {
@@ -603,4 +603,8 @@ body {
 	color: #0096D6;
 	font-size: 18px;
 	font-family: HPLight;
+}
+
+.leadMargin {
+	margin-top: 10px;
 }

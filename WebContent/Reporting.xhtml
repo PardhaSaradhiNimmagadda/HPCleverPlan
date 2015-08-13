@@ -1,0 +1,414 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="templatewithoutsidebar.xhtml">
+	<ui:define name="title">Reporting</ui:define>
+    <ui:define name="head">
+    <style>
+    	.dtc{
+			font-size: 9px !important;
+			font-family: HPlight !important;
+			text-align: center;
+			color:#fff !important;
+			
+		}
+		
+		
+		.dt{
+			font-size: 13px !important;
+			font-family: HPlight !important;
+			text-align: center;
+			color:#fff !important;
+		}
+		
+		.reports{
+			margin-top: 3%; 
+			color:#fff; 
+			background: #8fb6ea; 
+			text-align: center; 
+			border: 1px solid #fff; 
+			font-size: 17px;
+		}
+		
+		.rotate90 .ui-column-title {
+		  -webkit-transform: rotate(-90deg);
+		  -moz-transform: rotate(-90deg);
+		  -ms-transform: rotate(-90deg);
+		  -o-transform: rotate(-90deg);
+		  transform: rotate(-90deg);
+		
+		  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+		  -webkit-transform-origin: 50% 50%;
+		  -moz-transform-origin: 50% 50%;
+		  -ms-transform-origin: 50% 50%;
+		  -o-transform-origin: 50% 50%;
+		  transform-origin: 50% 50%;
+		
+		  /* Should be unset in IE9+ I think. */
+		  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		  	margin-left: -8px;
+			margin-top: -16px;
+			position: absolute;
+		}
+		
+		.rotate901 .ui-column-title {
+		  -webkit-transform: rotate(-90deg);
+		  -moz-transform: rotate(-90deg);
+		  -ms-transform: rotate(-90deg);
+		  -o-transform: rotate(-90deg);
+		  transform: rotate(-90deg);
+		
+		  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+		  -webkit-transform-origin: 50% 50%;
+		  -moz-transform-origin: 50% 50%;
+		  -ms-transform-origin: 50% 50%;
+		  -o-transform-origin: 50% 50%;
+		  transform-origin: 50% 50%;
+		
+		  /* Should be unset in IE9+ I think. */
+		  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		  	margin-left: -9px;
+			margin-top: -17px;
+			position: absolute;
+		}
+		
+		.rotate902 .ui-column-title {
+		  -webkit-transform: rotate(-90deg);
+		  -moz-transform: rotate(-90deg);
+		  -ms-transform: rotate(-90deg);
+		  -o-transform: rotate(-90deg);
+		  transform: rotate(-90deg);
+		
+		  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+		  -webkit-transform-origin: 50% 50%;
+		  -moz-transform-origin: 50% 50%;
+		  -ms-transform-origin: 50% 50%;
+		  -o-transform-origin: 50% 50%;
+		  transform-origin: 50% 50%;
+		
+		  /* Should be unset in IE9+ I think. */
+		  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		  	margin-left: -30px;
+			margin-top: -16px;
+			position: absolute;
+		}
+		
+		.rotate903 .ui-column-title {
+		  -webkit-transform: rotate(-90deg);
+		  -moz-transform: rotate(-90deg);
+		  -ms-transform: rotate(-90deg);
+		  -o-transform: rotate(-90deg);
+		  transform: rotate(-90deg);
+		
+		  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+		  -webkit-transform-origin: 50% 50%;
+		  -moz-transform-origin: 50% 50%;
+		  -ms-transform-origin: 50% 50%;
+		  -o-transform-origin: 50% 50%;
+		  transform-origin: 50% 50%;
+		
+		  /* Should be unset in IE9+ I think. */
+		  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		  	margin-left: -20px;
+			margin-top: -16px;
+			position: absolute;
+		}
+		
+		.ui-datatable-scrollable-theadclone {
+			display: none;
+		}
+    </style>
+    <!-- <script>
+    	$(document).ready(function(){
+    		var text = $(".rotate90").html();
+    		alert(text);
+    		text = text.replace("span", "div");
+    		text = text.replace("/span", "/div");
+    		alert(text);
+    		$(".rotate90").html(text);
+    	})
+    </script> -->
+    </ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">INVENTORY OPTIMIZATION</span> 
+    </ui:define>
+    
+   <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	             <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="float: right; font-size: 12px; margin-right: 15px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>
+	   
+		<ui:define name="main_content">
+        <div class="row">
+        
+        <div class="col-md-1"></div>
+        <div class="col-md-10"></div>
+        <div class="col-md-1"></div>
+           
+           <div class="col-md-1"></div>
+		    <div class="col-md-10 controlheader">REPORTING</div>
+		    <div class="col-md-1"></div>
+		   </div> 
+		   <br/><br/>
+	     <div class="controlsub">DETAILED INVENTORY REPORT</div>
+	       
+	       		<h:form id="form">
+			
+			   
+	  <p:dataTable styleClass="col-md-8 col-sm-8 main-content2" var="report" value="#{reportBean.reports}" scrollable="true" scrollHeight="150" style="margin-left: 1%;width: 98%;" >
+       	<p:columnGroup type="header">
+			<p:row>
+                <p:column colspan="4" headerText="PART ATTRIBUTE" styleClass="dt" style="width:13%"/>
+                <p:column colspan="5" headerText="ORIGI FORECAST" styleClass="dt" />
+                <p:column colspan="5" headerText="CORRECTED FORECAST" styleClass="dt"/>
+                <p:column colspan="5" headerText="SOLUTION GENERATED FORECAST" styleClass="dt"/>
+                <p:column colspan="3" headerText="ERROR MAPE" styleClass="dt"/>
+                <p:column colspan="3" headerText="SAFETY STOCK" styleClass="dt"/>
+             	<p:column colspan="4" headerText="PROPOSED INVENTORY" styleClass="dt" style="width:7%"/>
+                <p:column colspan="2" headerText="ACTUAL INV" styleClass="dt"  style="width:5%"/>
+                <p:column colspan="2" headerText="TARGETE" styleClass="dt"  style="width:6%"/>
+                 <p:column colspan="6" headerText="DELTA" styleClass="dt" style="width:18%"/>
+            </p:row>
+            
+            
+            <p:row>
+                <p:column rowspan="1" headerText="COMMODITY"  styleClass="dtc" style=" width:10px;"/>
+                <p:column rowspan="1" headerText="PART NUMBER" styleClass="dtc"  />
+                <p:column rowspan="1" headerText="PART DESC" styleClass="dtc"/>
+                <p:column rowspan="1" headerText="EOL/NPI/REG" styleClass="dtc" style=""/>
+                <p:column colpan="1" headerText="M 0" styleClass="dtc"  />
+                <p:column colpan="1" headerText="M+1" styleClass="dtc rotate90" />
+                <p:column colspan="1" headerText="M+2" styleClass="dtc rotate90" style="  "/>
+                <p:column colspan="1" headerText="M+3" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+4" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M 0" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+1" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+2" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+3" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+4" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M 0" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+1" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+2" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+3" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="M+4" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="ORIG" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="CORR" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="SOL GEN" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="MIN" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="OPT" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="MAX" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="PROD" styleClass="dtc rotate901" style="  "/>
+              	<p:column rowspan="1" headerText="$" styleClass="dtc rotate901" style="  "/> 
+                <p:column rowspan="1" headerText="TOT-WOS" styleClass="dtc rotate903" style="  "/>
+                <p:column rowspan="1" headerText="$" styleClass="dtc rotate903" style="  "/>
+                <p:column rowspan="1" headerText="WOS" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="$" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="WOS" styleClass="dtc rotate90"  style="  "/>
+                <p:column rowspan="1" headerText="$" styleClass="dtc rotate90" style="  "/>
+                <p:column rowspan="1" headerText="ACT-PROP WOS" styleClass="dtc rotate902" style="  "/>
+                <p:column rowspan="1" headerText="ACT-TAR WOS" styleClass="dtc rotate902" style="  "/>
+                <p:column rowspan="1" headerText="PROP-TAR WOS" styleClass="dtc rotate902" style="  "/>
+                <p:column rowspan="1" headerText="ACT-PROP $" styleClass="dtc rotate902" style="  "/>
+                 <p:column rowspan="1" headerText="ACT-TAR $" styleClass="dtc rotate902" style="  "/>
+                 <p:column rowspan="1" headerText="PROP-TAR $" styleClass="dtc rotate902" style="  " />
+            </p:row>
+          </p:columnGroup>
+ 	         <!-- 1 -->
+           <p:column >
+            <h:outputText value="#{report.com_modity}" />
+        </p:column>
+        <p:column >
+            <h:outputText value="#{report.part_number}" />
+        </p:column>
+        <p:column >
+            <h:outputText value="#{report.part_desc}" />
+        </p:column>
+        <p:column >
+            <h:outputText value="#{report.eol_npi_reg}" />
+        </p:column>
+        
+        
+        
+        <!-- 2 -->
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+      
+        
+        
+        <!-- 3 -->
+        <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+            <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+      
+        
+        <!-- 4 -->
+        <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+            <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+      
+        
+        <!-- 5 -->
+           <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+           <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+      
+        
+           <!-- 6 -->
+           <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+            <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+      
+        
+           <!-- 7 -->
+           <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+            <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+      
+        
+           <!-- 8 -->
+              <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+      
+        
+           <!-- 9 -->
+              <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.orig}" />
+        </p:column>
+      
+        
+           <!-- 10 -->
+              <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+          <p:column>
+            <h:outputText value="#{report.m_0}" />
+        </p:column>
+      
+ 
+       </p:dataTable>       
+			  
+			</h:form>
+			
+			
+			<div class="row">
+	      
+	    	<div class="col-md-4 pull-left reports" style="margin-left: 3%; width: 28%;">
+	    	<div>DOWNLOAD FULL REPORT </div>
+	    	</div> 
+	   
+	    	
+	    	<div class="col-md-4 text-center reports">
+	      		<div class="" style="width: 55%; margin-left: 20%;">DOWNLOAD FORECAST REPORT</div>
+	      	</div>
+	    	
+	    	<div class="col-md-4 reports">
+	      		<div class="" style="margin-left: 13%;width:65%;">DOWNLOAD INVENTORY REPORT</div>
+	      	</div>
+	      	
+	      	
+	      	</div>
+	    
+	       </ui:define>  
+			<ui:define name="footer">
+			
+      
+       		 </ui:define> 
+      
+ 
+ </ui:composition>

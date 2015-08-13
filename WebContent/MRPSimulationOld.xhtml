@@ -1,0 +1,229 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="template.xhtml">
+	<ui:define name="title">MRP simulation</ui:define>
+    <ui:define name="head">
+    </ui:define>
+    
+    <ui:define name="header_left">
+        <span class="header_txt">CLEVERPLAN</span><br/>
+        <span class="header1_txt">HP Brazil Proactive Planning Platform</span> 
+    </ui:define>
+    
+    <ui:define name="header_center">
+		<span class="heading_txt">MRP SIMULATION</span> 
+    </ui:define>
+    
+    <ui:define name="header_right">
+        <div class="row" style="padding-top: 15px;">
+	        <div class="col-md-9 col-sm-9 col-xs-9">
+	        	<span class="braziltime">  <b>Brazil Time, <span id="maintime"></span>, <span id="maindatenew"></span>  </b> </span><br/>
+	        	<span class="braziltime2"><b> WELCOME ALEX </b><p:commandButton style="float: right; font-size: 12px; margin-right: 15px; color:#0096D6" value="LOGOUT"/></span><br/>
+	        	<span class="braziltime3"><b>Your Last Login Was on July 29 2015.</b></span>
+	        </div>
+	        <div class="col-md-3 col-sm-3 col-xs-3">
+	        	<h:graphicImage value="Resources/images/HP_Blue150.png"/>
+	        	
+	        </div>
+	        
+	    </div>
+	      
+    </ui:define>  
+   	<ui:define name="left_sidebar">
+		 <div class="row">
+			  <div class="col-md-6 col-sm-6 col-xs-6">
+			    
+			     </div>
+			    
+		 </div>   
+	       <div class=" vertical-border">
+			     </div> 
+ 	</ui:define>
+			 
+	<ui:define name="main_content">
+             
+      
+	         <div class="row">
+	          
+         		 <div class="col-md-6 col-sm-6 col-xs-6 NO NOT" style="width:26%; margin-left: 48%;">
+		         		<div class="blockHeader fontheader">INVENTORY TRADEND CHART</div>
+			     		<div class="blocktext2">Actual Inventory Vs Optimized Inventory-WOS</div>	
+				   		<div class="blockHeader">$ INVENTORY TREAD</div>
+			     		<div class="blocktext2">Actual Inventory Vs Optimized Inventory</div>	
+							
+				 </div>
+		        	<div class="col-md-6 col-sm-6 col-xs-6 NO" style="width:26%; margin-right: 7px;">
+		                <div class="blockHeader">FORCEST ACCURACY</div>
+			     		<div class="blocktext3">Business forecast Accuracy</div>	
+				        <div class="blockHeader">RISK ASSESSMENT</div>
+			     		<div class="blocktext3">Potential Future Shortage Weeks</div>	
+						
+				   </div>
+				    
+          </div>
+          <hr style="border: 1px solid #0096D6;"></hr>
+	   
+	    <h:form>
+		    <p:dataTable emptyMessage=""  scrollable="true" >
+			 
+			      <p:columnGroup type="header">
+            <p:row>
+                <p:column rowspan="2" headerText="PartFamily" styleClass="sub-block" />
+                <p:column rowspan="2" headerText="PartNumber" styleClass="sub-block"/>
+                <p:column rowspan="2" headerText="Plan Generation Date" styleClass="sub-block"/>
+                <p:column rowspan="2" headerText="Safety Stock WOS" styleClass="sub-block"/>
+                <p:column rowspan="2" headerText="On Hand Inventory" styleClass="sub-block"/>
+                <p:column rowspan="2" headerText="On Hand Orders" styleClass="sub-block"/>
+                <p:column colspan="8" headerText="Net Requirement Plan" styleClass="sub-block1"/>
+            </p:row>
+            <p:row>
+                <p:column colspan="1" headerText="W+0" styleClass="sub-block2" style="background:#d1dded !important;" />
+                <p:column colspan="1" headerText="W+2" styleClass="sub-block2" style="background:#d1dded!important;"/>
+                 <p:column colspan="1" headerText="W+3" styleClass="sub-block2" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="W+4"  styleClass="sub-block2" style="background:#d1dded !important;"/>
+                 <p:column colspan="1" headerText="W+5"	styleClass="sub-block2" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="W+6" 	styleClass="sub-block2" style="background:#d1dded !important;"/>
+                 <p:column colspan="1" headerText="W+7" styleClass="sub-block2" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="W+8" styleClass="sub-block2" style="background:#d1dded !important;"/>
+            </p:row>
+            
+             <p:row>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText=""  style="background:#e9edf5 !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText=""  style="background:#e9edf5 !important;"/> 
+            </p:row>
+            
+            <p:row>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                
+            </p:row>
+            
+            <p:row>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                
+            </p:row>
+            
+            <p:row>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#e9edf5 !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                <p:column colspan="1" headerText="" style="background:#e9edf5 !important;"/>
+                
+            </p:row>
+            
+            <p:row>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+                <p:column rowspan="2" headerText="" style="background:#d1dded !important;"/>
+            </p:row>
+            
+            <p:row>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/>
+                <p:column colspan="1" headerText="" style="background:#d1dded !important;"/> 
+            </p:row>
+			        </p:columnGroup>      
+			    </p:dataTable>
+	 </h:form>
+	   
+	   
+	       
+	
+	       </ui:define>  
+			<ui:define name="footer">
+        		<div class="Copyright_information_HP_inc_text"> <span style="color:#7B7B80;">About Proactive Planning platform &#160;&#160;&#160;&#160;&#160;</span> <span style="color:#7B7B80;">Help And Faq&#160;&#160;&#160;&#160;&#160;</span>
+       				 &lt; Copyright information &gt;&#160;&#160;&#160;&#160;&#160; ProductAvailability And Alternatives&#160;&#160;&#160;&#160;&#160; GO TO Inventory OPtimization&#160;&#160;&#160;&#160;&#160; MRP simulation&#160;&#160;&#160;&#160;&#160; <span style="color:#7B7B80;">HP inc </span></div>
+       		 </ui:define> 
+      
+ 
+ </ui:composition>

@@ -55,43 +55,43 @@
 			 
 <ui:define name="main_content">
        <h:form>
-       		<div class="row">
-       			<div class="col-md-4 NOP"></div>
-       			<div class="col-md-8">
-       				<div class="row" style="padding-right: 10px;">
-				         <div class="col-md-6">
-							<p:growl id="growl" showDetail="true" />
-						 	<div class="blockHeader">
-					  			FORECAST ACCURACY
-					  		</div>
-					  		<p:chart type="bar" model="#{charView.barModel}" style="width:95%;height:200px">
-			                    <p:ajax event="itemSelect" listener="#{charView.itemSelect}" update="growl" />
-			                 </p:chart>	
-					  		
-				    	</div>
-			        	<div class="col-md-6">
-						    <div class="blockHeader">  
-						        INVENTORY TREND CHART
-				 		  	</div>
-			                <p:chart type="pie" model="#{charView.pieModel1}" style="width:100%;height:200px">
-			            		<p:ajax event="itemSelect" listener="#{charView.itemSelect}" update="growl" />
-			        		</p:chart>	
-					    </div>
-						<div class="col-md-6">
-				         	<div class="blockHeader">
-						  	 RISK MANAGEMENT
-						  	</div>
-					 		<p:chart type="donut" model="#{chartView.donutModel1}" style="width:100%;height:200px" />
-					   </div>
-					   <div class="col-md-6">
-				           <div class="blockHeader">
-					  	 		$ INVENTORY TREND
-					  		</div>
-						    <p:chart type="line" model="#{areaView.areaModel}" style="width:95%;height:200px" />
-			         	</div>
-					</div>
-       			</div>
-       		</div>      
+<div class="row">
+	<div class="col-md-4 NOP"></div>
+	<div class="col-md-8">
+		<div class="row" style="padding-right: 10px;">
+			<div class="col-md-6">
+				<p:growl id="growl" showDetail="true" />
+				<div class="blockHeader">
+						FORECAST ACCURACY
+				</div>
+				<p:chart type="bar" model="#{charView.barModel}" style="width:95%;height:200px">
+					<p:ajax event="itemSelect" listener="#{charView.itemSelect}" update="growl" />
+				</p:chart>	
+
+			</div>
+			<div class="col-md-6">
+	 			<div class="blockHeader">  
+	     			INVENTORY TREND CHART
+				</div>
+	       		<p:chart type="pie" model="#{charView.pieModel1}" style="width:100%;height:200px">
+	         		<p:ajax event="itemSelect" listener="#{charView.itemSelect}" update="growl" />
+	     		</p:chart>	
+   			</div>
+			<div class="col-md-6">
+       			<div class="blockHeader">
+  	 				RISK MANAGEMENT
+  				</div>
+				<p:chart type="donut" model="#{chartView.donutModel1}" style="width:100%;height:200px" />
+			</div>
+			<div class="col-md-6">
+				<div class="blockHeader">
+					$ INVENTORY TREND
+				</div>
+				<p:chart type="line" model="#{areaView.areaModel}" style="width:95%;height:200px" />
+       		</div>
+		</div>
+	</div>
+</div>      
 			
         
           <!-- <hr style="border: 1px solid #0096D6;"></hr> -->
